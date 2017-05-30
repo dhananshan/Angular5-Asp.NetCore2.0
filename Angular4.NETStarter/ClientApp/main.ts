@@ -1,6 +1,9 @@
 ﻿import 'reflect-metadata';
 import 'zone.js';
 
+import 'expose-loader?$!expose-loader?jQuery!jquery'
+import 'bootstrap/dist/js/bootstrap';
+
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';

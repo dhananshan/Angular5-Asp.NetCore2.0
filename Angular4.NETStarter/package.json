@@ -39,6 +39,7 @@
     "webpack-hot-middleware": "2.18.0",
     "webpack-merge": "4.1.0",
     "zone.js": "0.8.10"
+
   },
   "devDependencies": {
     "@types/chai": "3.5.2",
@@ -61,7 +62,6 @@
     "tslint": "^3.15.1",
     "typescript": "~2.0.10",
     "html-webpack-plugin": "^2.16.1"
-
   },
   "name": "ngasp.net",
   "scripts": {
