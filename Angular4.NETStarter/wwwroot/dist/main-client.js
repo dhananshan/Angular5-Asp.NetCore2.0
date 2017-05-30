@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a6f03395684e7ded7ef2"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "70e91082d5c050a0349f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -704,7 +704,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(30)(__webpack_require__.s = 30);
+/******/ 	return hotCreateRequire(38)(__webpack_require__.s = 38);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -928,12 +928,12 @@ module.exports = Html5Entities;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(19);
-__webpack_require__(29);
-__webpack_require__(10);
-__webpack_require__(31);
+__webpack_require__(25);
+__webpack_require__(37);
+__webpack_require__(13);
+__webpack_require__(35);
 var core_1 = __webpack_require__(1);
-var platform_browser_dynamic_1 = __webpack_require__(26);
+var platform_browser_dynamic_1 = __webpack_require__(32);
 var app_module_1 = __webpack_require__(9);
 if (true) {
     module['hot'].accept();
@@ -968,7 +968,7 @@ var options = {
   name: ''
 };
 if (true) {
-  var querystring = __webpack_require__(18);
+  var querystring = __webpack_require__(24);
   var overrides = querystring.parse(__resourceQuery.slice(1));
   if (overrides.path) options.path = overrides.path;
   if (overrides.timeout) options.timeout = overrides.timeout;
@@ -1088,11 +1088,11 @@ if (typeof window !== 'undefined') {
 }
 
 function createReporter() {
-  var strip = __webpack_require__(22);
+  var strip = __webpack_require__(28);
 
   var overlay;
   if (typeof document !== 'undefined' && options.overlay) {
-    overlay = __webpack_require__(20);
+    overlay = __webpack_require__(26);
   }
 
   var styles = {
@@ -1145,7 +1145,7 @@ function createReporter() {
   };
 }
 
-var processUpdate = __webpack_require__(23);
+var processUpdate = __webpack_require__(29);
 
 var customHandler;
 var subscribeAllHandler;
@@ -1210,7 +1210,7 @@ if (module) {
   };
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(24)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(30)(module)))
 
 /***/ }),
 /* 6 */
@@ -1423,7 +1423,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app',
-        template: __webpack_require__(15)
+        template: __webpack_require__(18)
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -1443,8 +1443,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
-var platform_browser_1 = __webpack_require__(27);
+var platform_browser_1 = __webpack_require__(34);
 var app_component_1 = __webpack_require__(8);
+var kendo_component_1 = __webpack_require__(10);
+var pagenotfound_component_1 = __webpack_require__(12);
+var nav_component_1 = __webpack_require__(11);
+var router_1 = __webpack_require__(33);
+var appRoutes = [
+    { path: 'kendo', component: kendo_component_1.KendoComponent }
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -1452,8 +1459,11 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent],
+        imports: [platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(appRoutes)],
+        declarations: [app_component_1.AppComponent,
+            kendo_component_1.KendoComponent,
+            pagenotfound_component_1.PageNotFoundComponent,
+            nav_component_1.NavComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
@@ -1464,30 +1474,116 @@ exports.AppModule = AppModule;
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(11);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(1);
+var KendoComponent = (function () {
+    function KendoComponent() {
+    }
+    return KendoComponent;
+}());
+KendoComponent = __decorate([
+    core_1.Component({
+        template: __webpack_require__(19)
+    })
+], KendoComponent);
+exports.KendoComponent = KendoComponent;
+
 
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(28);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(1);
+var NavComponent = (function () {
+    function NavComponent() {
+    }
+    return NavComponent;
+}());
+NavComponent = __decorate([
+    core_1.Component({
+        selector: 'nav-bar',
+        template: __webpack_require__(20)
+    }),
+    __metadata("design:paramtypes", [])
+], NavComponent);
+exports.NavComponent = NavComponent;
+
 
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(1);
+var PageNotFoundComponent = (function () {
+    function PageNotFoundComponent() {
+    }
+    return PageNotFoundComponent;
+}());
+PageNotFoundComponent = __decorate([
+    core_1.Component({
+        template: __webpack_require__(21)
+    })
+], PageNotFoundComponent);
+exports.PageNotFoundComponent = PageNotFoundComponent;
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(14);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(36);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
 module.exports = {
-  XmlEntities: __webpack_require__(14),
-  Html4Entities: __webpack_require__(13),
+  XmlEntities: __webpack_require__(17),
+  Html4Entities: __webpack_require__(16),
   Html5Entities: __webpack_require__(3),
   AllHtmlEntities: __webpack_require__(3)
 };
 
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(module, exports) {
 
 var HTML_ALPHA = ['apos', 'nbsp', 'iexcl', 'cent', 'pound', 'curren', 'yen', 'brvbar', 'sect', 'uml', 'copy', 'ordf', 'laquo', 'not', 'shy', 'reg', 'macr', 'deg', 'plusmn', 'sup2', 'sup3', 'acute', 'micro', 'para', 'middot', 'cedil', 'sup1', 'ordm', 'raquo', 'frac14', 'frac12', 'frac34', 'iquest', 'Agrave', 'Aacute', 'Acirc', 'Atilde', 'Auml', 'Aring', 'Aelig', 'Ccedil', 'Egrave', 'Eacute', 'Ecirc', 'Euml', 'Igrave', 'Iacute', 'Icirc', 'Iuml', 'ETH', 'Ntilde', 'Ograve', 'Oacute', 'Ocirc', 'Otilde', 'Ouml', 'times', 'Oslash', 'Ugrave', 'Uacute', 'Ucirc', 'Uuml', 'Yacute', 'THORN', 'szlig', 'agrave', 'aacute', 'acirc', 'atilde', 'auml', 'aring', 'aelig', 'ccedil', 'egrave', 'eacute', 'ecirc', 'euml', 'igrave', 'iacute', 'icirc', 'iuml', 'eth', 'ntilde', 'ograve', 'oacute', 'ocirc', 'otilde', 'ouml', 'divide', 'oslash', 'ugrave', 'uacute', 'ucirc', 'uuml', 'yacute', 'thorn', 'yuml', 'quot', 'amp', 'lt', 'gt', 'OElig', 'oelig', 'Scaron', 'scaron', 'Yuml', 'circ', 'tilde', 'ensp', 'emsp', 'thinsp', 'zwnj', 'zwj', 'lrm', 'rlm', 'ndash', 'mdash', 'lsquo', 'rsquo', 'sbquo', 'ldquo', 'rdquo', 'bdquo', 'dagger', 'Dagger', 'permil', 'lsaquo', 'rsaquo', 'euro', 'fnof', 'Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', 'Omega', 'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigmaf', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'thetasym', 'upsih', 'piv', 'bull', 'hellip', 'prime', 'Prime', 'oline', 'frasl', 'weierp', 'image', 'real', 'trade', 'alefsym', 'larr', 'uarr', 'rarr', 'darr', 'harr', 'crarr', 'lArr', 'uArr', 'rArr', 'dArr', 'hArr', 'forall', 'part', 'exist', 'empty', 'nabla', 'isin', 'notin', 'ni', 'prod', 'sum', 'minus', 'lowast', 'radic', 'prop', 'infin', 'ang', 'and', 'or', 'cap', 'cup', 'int', 'there4', 'sim', 'cong', 'asymp', 'ne', 'equiv', 'le', 'ge', 'sub', 'sup', 'nsub', 'sube', 'supe', 'oplus', 'otimes', 'perp', 'sdot', 'lceil', 'rceil', 'lfloor', 'rfloor', 'lang', 'rang', 'loz', 'spades', 'clubs', 'hearts', 'diams'];
@@ -1640,7 +1736,7 @@ module.exports = Html4Entities;
 
 
 /***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(module, exports) {
 
 var ALPHA_INDEX = {
@@ -1801,13 +1897,31 @@ module.exports = XmlEntities;
 
 
 /***/ }),
-/* 15 */
+/* 18 */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse navbar-fixed-top\">\r\n    <div class=\"container\">\r\n        <div class=\"navbar-header\">\r\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n                <span class=\"sr-only\">Toggle navigation</span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n                <span class=\"icon-bar\"></span>\r\n            </button>\r\n            <a class=\"navbar-brand\" href=\"#\">Project name</a>\r\n        </div>\r\n        <div id=\"navbar\" class=\"navbar-collapse collapse\" aria-expanded=\"false\" style=\"height: 1px;\">\r\n            <ul class=\"nav navbar-nav\">\r\n                <li class=\"active\"><a href=\"#\">Home</a></li>\r\n                <li><a href=\"#about\">About</a></li>\r\n                <li><a href=\"#contact\">Contact</a></li>\r\n            </ul>\r\n        </div><!--/.nav-collapse -->\r\n    </div>\r\n</nav>\r\n";
+module.exports = "<nav class=\"navbar navbar-inverse navbar-fixed-top\">\r\n    <div class=\"container\">\r\n        <nav-bar></nav-bar>\r\n    </div>\r\n</nav>\r\n\r\n<br />\r\n\r\n<div class=\"container\">\r\n\r\n    <div class=\"jumbotron\">\r\n\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n\r\n</div>\r\n\r\n";
 
 /***/ }),
-/* 16 */
+/* 19 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>in progress ...</h1>";
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"navbar-header\">\r\n    <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n    </button>\r\n    <a class=\"navbar-brand\" href=\"#\">Angular4-Asp.NetCore</a>\r\n</div>\r\n<div id=\"navbar\" class=\"navbar-collapse collapse\" aria-expanded=\"false\" style=\"height: 1px;\">\r\n    <ul class=\"nav navbar-nav\">\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">Kendo</a></li>\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">ng2-material</a></li>\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">ASP.NET Core SignalR</a></li>\r\n    </ul>\r\n</div><!--/.nav-collapse -->";
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+module.exports = "404: Not Found";
+
+/***/ }),
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1898,7 +2012,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 17 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1990,18 +2104,18 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 18 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(16);
-exports.encode = exports.stringify = __webpack_require__(17);
+exports.decode = exports.parse = __webpack_require__(22);
+exports.encode = exports.stringify = __webpack_require__(23);
 
 
 /***/ }),
-/* 19 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {/*! *****************************************************************************
@@ -3129,10 +3243,10 @@ var Reflect;
             Function("return this;")());
 })(Reflect || (Reflect = {}));
 //# sourceMappingURL=Reflect.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(25), __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31), __webpack_require__(2)))
 
 /***/ }),
-/* 20 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*eslint-env browser*/
@@ -3176,7 +3290,7 @@ var colors = {
 };
 ansiHTML.setColors(colors);
 
-var Entities = __webpack_require__(12).AllHtmlEntities;
+var Entities = __webpack_require__(15).AllHtmlEntities;
 var entities = new Entities();
 
 exports.showProblems =
@@ -3217,7 +3331,7 @@ function problemType (type) {
 
 
 /***/ }),
-/* 21 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3228,12 +3342,12 @@ module.exports = function () {
 
 
 /***/ }),
-/* 22 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ansiRegex = __webpack_require__(21)();
+var ansiRegex = __webpack_require__(27)();
 
 module.exports = function (str) {
 	return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
@@ -3241,7 +3355,7 @@ module.exports = function (str) {
 
 
 /***/ }),
-/* 23 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -3379,7 +3493,7 @@ module.exports = function(hash, moduleMap, options) {
 
 
 /***/ }),
-/* 24 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -3407,49 +3521,55 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 25 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(0))(11);
 
 /***/ }),
-/* 26 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(0))(38);
 
 /***/ }),
-/* 27 */
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(0))(39);
+
+/***/ }),
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(0))(4);
 
 /***/ }),
-/* 28 */
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(0))(40);
+
+/***/ }),
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(0))(46);
 
 /***/ }),
-/* 29 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(0))(47);
 
 /***/ }),
-/* 30 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(6);
 __webpack_require__(5);
 module.exports = __webpack_require__(4);
 
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(0))(40);
 
 /***/ })
 /******/ ]);
