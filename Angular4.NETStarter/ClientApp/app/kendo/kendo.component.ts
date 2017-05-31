@@ -7,4 +7,10 @@
 })
 
 
-export class KendoComponent { } 
+export class KendoComponent {
+    title = 'Hello World!';
+
+    onButtonClick() {
+        this.title = 'Hello from Kendo UI!';
+    }
+} 

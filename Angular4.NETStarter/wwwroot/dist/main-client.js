@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "70e91082d5c050a0349f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fdd10e9a271ff9c6dc58"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -711,19 +711,19 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-module.exports = vendor_7a8f0a10cf1ca12e604c;
+module.exports = vendor_94771332ab9622fe8c58;
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(2);
+module.exports = (__webpack_require__(0))(0);
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(6);
+module.exports = (__webpack_require__(0))(12);
 
 /***/ }),
 /* 3 */
@@ -928,12 +928,12 @@ module.exports = Html5Entities;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(25);
-__webpack_require__(37);
+__webpack_require__(26);
+__webpack_require__(36);
+__webpack_require__(14);
 __webpack_require__(13);
-__webpack_require__(35);
 var core_1 = __webpack_require__(1);
-var platform_browser_dynamic_1 = __webpack_require__(32);
+var platform_browser_dynamic_1 = __webpack_require__(33);
 var app_module_1 = __webpack_require__(9);
 if (true) {
     module['hot'].accept();
@@ -968,7 +968,7 @@ var options = {
   name: ''
 };
 if (true) {
-  var querystring = __webpack_require__(24);
+  var querystring = __webpack_require__(25);
   var overrides = querystring.parse(__resourceQuery.slice(1));
   if (overrides.path) options.path = overrides.path;
   if (overrides.timeout) options.timeout = overrides.timeout;
@@ -1088,11 +1088,11 @@ if (typeof window !== 'undefined') {
 }
 
 function createReporter() {
-  var strip = __webpack_require__(28);
+  var strip = __webpack_require__(29);
 
   var overlay;
   if (typeof document !== 'undefined' && options.overlay) {
-    overlay = __webpack_require__(26);
+    overlay = __webpack_require__(27);
   }
 
   var styles = {
@@ -1145,7 +1145,7 @@ function createReporter() {
   };
 }
 
-var processUpdate = __webpack_require__(29);
+var processUpdate = __webpack_require__(30);
 
 var customHandler;
 var subscribeAllHandler;
@@ -1210,13 +1210,13 @@ if (module) {
   };
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(30)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(31)(module)))
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(44);
+module.exports = (__webpack_require__(0))(83);
 
 /***/ }),
 /* 7 */
@@ -1423,7 +1423,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app',
-        template: __webpack_require__(18)
+        template: __webpack_require__(19)
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -1443,12 +1443,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
-var platform_browser_1 = __webpack_require__(34);
+var platform_browser_1 = __webpack_require__(37);
+var forms_1 = __webpack_require__(42);
 var app_component_1 = __webpack_require__(8);
-var kendo_component_1 = __webpack_require__(10);
 var pagenotfound_component_1 = __webpack_require__(12);
 var nav_component_1 = __webpack_require__(11);
-var router_1 = __webpack_require__(33);
+var router_1 = __webpack_require__(34);
+var animations_1 = __webpack_require__(40);
+// Import the ButtonsModule
+var kendo_component_1 = __webpack_require__(10);
+var kendo_angular_buttons_1 = __webpack_require__(43);
 var appRoutes = [
     { path: 'kendo', component: kendo_component_1.KendoComponent }
 ];
@@ -1459,7 +1463,11 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(appRoutes)],
+        imports: [platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            animations_1.BrowserAnimationsModule,
+            kendo_angular_buttons_1.ButtonsModule,
+            router_1.RouterModule.forRoot(appRoutes)],
         declarations: [app_component_1.AppComponent,
             kendo_component_1.KendoComponent,
             pagenotfound_component_1.PageNotFoundComponent,
@@ -1486,12 +1494,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var KendoComponent = (function () {
     function KendoComponent() {
+        this.title = 'Hello World!';
     }
+    KendoComponent.prototype.onButtonClick = function () {
+        this.title = 'Hello from Kendo UI!';
+    };
     return KendoComponent;
 }());
 KendoComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(19)
+        template: __webpack_require__(20)
     })
 ], KendoComponent);
 exports.KendoComponent = KendoComponent;
@@ -1522,7 +1534,7 @@ var NavComponent = (function () {
 NavComponent = __decorate([
     core_1.Component({
         selector: 'nav-bar',
-        template: __webpack_require__(20)
+        template: __webpack_require__(21)
     }),
     __metadata("design:paramtypes", [])
 ], NavComponent);
@@ -1550,7 +1562,7 @@ var PageNotFoundComponent = (function () {
 }());
 PageNotFoundComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(21)
+        template: __webpack_require__(22)
     })
 ], PageNotFoundComponent);
 exports.PageNotFoundComponent = PageNotFoundComponent;
@@ -1558,32 +1570,2415 @@ exports.PageNotFoundComponent = PageNotFoundComponent;
 
 /***/ }),
 /* 13 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(14);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under the MIT license
+ */
+
+if (typeof jQuery === 'undefined') {
+  throw new Error('Bootstrap\'s JavaScript requires jQuery')
+}
+
++function ($) {
+  'use strict';
+  var version = $.fn.jquery.split(' ')[0].split('.')
+  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
+    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 4')
+  }
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: transition.js v3.3.7
+ * http://getbootstrap.com/javascript/#transitions
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
+  // ============================================================
+
+  function transitionEnd() {
+    var el = document.createElement('bootstrap')
+
+    var transEndEventNames = {
+      WebkitTransition : 'webkitTransitionEnd',
+      MozTransition    : 'transitionend',
+      OTransition      : 'oTransitionEnd otransitionend',
+      transition       : 'transitionend'
+    }
+
+    for (var name in transEndEventNames) {
+      if (el.style[name] !== undefined) {
+        return { end: transEndEventNames[name] }
+      }
+    }
+
+    return false // explicit for ie8 (  ._.)
+  }
+
+  // http://blog.alexmaccaw.com/css-transitions
+  $.fn.emulateTransitionEnd = function (duration) {
+    var called = false
+    var $el = this
+    $(this).one('bsTransitionEnd', function () { called = true })
+    var callback = function () { if (!called) $($el).trigger($.support.transition.end) }
+    setTimeout(callback, duration)
+    return this
+  }
+
+  $(function () {
+    $.support.transition = transitionEnd()
+
+    if (!$.support.transition) return
+
+    $.event.special.bsTransitionEnd = {
+      bindType: $.support.transition.end,
+      delegateType: $.support.transition.end,
+      handle: function (e) {
+        if ($(e.target).is(this)) return e.handleObj.handler.apply(this, arguments)
+      }
+    }
+  })
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: alert.js v3.3.7
+ * http://getbootstrap.com/javascript/#alerts
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // ALERT CLASS DEFINITION
+  // ======================
+
+  var dismiss = '[data-dismiss="alert"]'
+  var Alert   = function (el) {
+    $(el).on('click', dismiss, this.close)
+  }
+
+  Alert.VERSION = '3.3.7'
+
+  Alert.TRANSITION_DURATION = 150
+
+  Alert.prototype.close = function (e) {
+    var $this    = $(this)
+    var selector = $this.attr('data-target')
+
+    if (!selector) {
+      selector = $this.attr('href')
+      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+    }
+
+    var $parent = $(selector === '#' ? [] : selector)
+
+    if (e) e.preventDefault()
+
+    if (!$parent.length) {
+      $parent = $this.closest('.alert')
+    }
+
+    $parent.trigger(e = $.Event('close.bs.alert'))
+
+    if (e.isDefaultPrevented()) return
+
+    $parent.removeClass('in')
+
+    function removeElement() {
+      // detach from parent, fire event then clean up data
+      $parent.detach().trigger('closed.bs.alert').remove()
+    }
+
+    $.support.transition && $parent.hasClass('fade') ?
+      $parent
+        .one('bsTransitionEnd', removeElement)
+        .emulateTransitionEnd(Alert.TRANSITION_DURATION) :
+      removeElement()
+  }
+
+
+  // ALERT PLUGIN DEFINITION
+  // =======================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this = $(this)
+      var data  = $this.data('bs.alert')
+
+      if (!data) $this.data('bs.alert', (data = new Alert(this)))
+      if (typeof option == 'string') data[option].call($this)
+    })
+  }
+
+  var old = $.fn.alert
+
+  $.fn.alert             = Plugin
+  $.fn.alert.Constructor = Alert
+
+
+  // ALERT NO CONFLICT
+  // =================
+
+  $.fn.alert.noConflict = function () {
+    $.fn.alert = old
+    return this
+  }
+
+
+  // ALERT DATA-API
+  // ==============
+
+  $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: button.js v3.3.7
+ * http://getbootstrap.com/javascript/#buttons
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // BUTTON PUBLIC CLASS DEFINITION
+  // ==============================
+
+  var Button = function (element, options) {
+    this.$element  = $(element)
+    this.options   = $.extend({}, Button.DEFAULTS, options)
+    this.isLoading = false
+  }
+
+  Button.VERSION  = '3.3.7'
+
+  Button.DEFAULTS = {
+    loadingText: 'loading...'
+  }
+
+  Button.prototype.setState = function (state) {
+    var d    = 'disabled'
+    var $el  = this.$element
+    var val  = $el.is('input') ? 'val' : 'html'
+    var data = $el.data()
+
+    state += 'Text'
+
+    if (data.resetText == null) $el.data('resetText', $el[val]())
+
+    // push to event loop to allow forms to submit
+    setTimeout($.proxy(function () {
+      $el[val](data[state] == null ? this.options[state] : data[state])
+
+      if (state == 'loadingText') {
+        this.isLoading = true
+        $el.addClass(d).attr(d, d).prop(d, true)
+      } else if (this.isLoading) {
+        this.isLoading = false
+        $el.removeClass(d).removeAttr(d).prop(d, false)
+      }
+    }, this), 0)
+  }
+
+  Button.prototype.toggle = function () {
+    var changed = true
+    var $parent = this.$element.closest('[data-toggle="buttons"]')
+
+    if ($parent.length) {
+      var $input = this.$element.find('input')
+      if ($input.prop('type') == 'radio') {
+        if ($input.prop('checked')) changed = false
+        $parent.find('.active').removeClass('active')
+        this.$element.addClass('active')
+      } else if ($input.prop('type') == 'checkbox') {
+        if (($input.prop('checked')) !== this.$element.hasClass('active')) changed = false
+        this.$element.toggleClass('active')
+      }
+      $input.prop('checked', this.$element.hasClass('active'))
+      if (changed) $input.trigger('change')
+    } else {
+      this.$element.attr('aria-pressed', !this.$element.hasClass('active'))
+      this.$element.toggleClass('active')
+    }
+  }
+
+
+  // BUTTON PLUGIN DEFINITION
+  // ========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.button')
+      var options = typeof option == 'object' && option
+
+      if (!data) $this.data('bs.button', (data = new Button(this, options)))
+
+      if (option == 'toggle') data.toggle()
+      else if (option) data.setState(option)
+    })
+  }
+
+  var old = $.fn.button
+
+  $.fn.button             = Plugin
+  $.fn.button.Constructor = Button
+
+
+  // BUTTON NO CONFLICT
+  // ==================
+
+  $.fn.button.noConflict = function () {
+    $.fn.button = old
+    return this
+  }
+
+
+  // BUTTON DATA-API
+  // ===============
+
+  $(document)
+    .on('click.bs.button.data-api', '[data-toggle^="button"]', function (e) {
+      var $btn = $(e.target).closest('.btn')
+      Plugin.call($btn, 'toggle')
+      if (!($(e.target).is('input[type="radio"], input[type="checkbox"]'))) {
+        // Prevent double click on radios, and the double selections (so cancellation) on checkboxes
+        e.preventDefault()
+        // The target component still receive the focus
+        if ($btn.is('input,button')) $btn.trigger('focus')
+        else $btn.find('input:visible,button:visible').first().trigger('focus')
+      }
+    })
+    .on('focus.bs.button.data-api blur.bs.button.data-api', '[data-toggle^="button"]', function (e) {
+      $(e.target).closest('.btn').toggleClass('focus', /^focus(in)?$/.test(e.type))
+    })
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: carousel.js v3.3.7
+ * http://getbootstrap.com/javascript/#carousel
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // CAROUSEL CLASS DEFINITION
+  // =========================
+
+  var Carousel = function (element, options) {
+    this.$element    = $(element)
+    this.$indicators = this.$element.find('.carousel-indicators')
+    this.options     = options
+    this.paused      = null
+    this.sliding     = null
+    this.interval    = null
+    this.$active     = null
+    this.$items      = null
+
+    this.options.keyboard && this.$element.on('keydown.bs.carousel', $.proxy(this.keydown, this))
+
+    this.options.pause == 'hover' && !('ontouchstart' in document.documentElement) && this.$element
+      .on('mouseenter.bs.carousel', $.proxy(this.pause, this))
+      .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
+  }
+
+  Carousel.VERSION  = '3.3.7'
+
+  Carousel.TRANSITION_DURATION = 600
+
+  Carousel.DEFAULTS = {
+    interval: 5000,
+    pause: 'hover',
+    wrap: true,
+    keyboard: true
+  }
+
+  Carousel.prototype.keydown = function (e) {
+    if (/input|textarea/i.test(e.target.tagName)) return
+    switch (e.which) {
+      case 37: this.prev(); break
+      case 39: this.next(); break
+      default: return
+    }
+
+    e.preventDefault()
+  }
+
+  Carousel.prototype.cycle = function (e) {
+    e || (this.paused = false)
+
+    this.interval && clearInterval(this.interval)
+
+    this.options.interval
+      && !this.paused
+      && (this.interval = setInterval($.proxy(this.next, this), this.options.interval))
+
+    return this
+  }
+
+  Carousel.prototype.getItemIndex = function (item) {
+    this.$items = item.parent().children('.item')
+    return this.$items.index(item || this.$active)
+  }
+
+  Carousel.prototype.getItemForDirection = function (direction, active) {
+    var activeIndex = this.getItemIndex(active)
+    var willWrap = (direction == 'prev' && activeIndex === 0)
+                || (direction == 'next' && activeIndex == (this.$items.length - 1))
+    if (willWrap && !this.options.wrap) return active
+    var delta = direction == 'prev' ? -1 : 1
+    var itemIndex = (activeIndex + delta) % this.$items.length
+    return this.$items.eq(itemIndex)
+  }
+
+  Carousel.prototype.to = function (pos) {
+    var that        = this
+    var activeIndex = this.getItemIndex(this.$active = this.$element.find('.item.active'))
+
+    if (pos > (this.$items.length - 1) || pos < 0) return
+
+    if (this.sliding)       return this.$element.one('slid.bs.carousel', function () { that.to(pos) }) // yes, "slid"
+    if (activeIndex == pos) return this.pause().cycle()
+
+    return this.slide(pos > activeIndex ? 'next' : 'prev', this.$items.eq(pos))
+  }
+
+  Carousel.prototype.pause = function (e) {
+    e || (this.paused = true)
+
+    if (this.$element.find('.next, .prev').length && $.support.transition) {
+      this.$element.trigger($.support.transition.end)
+      this.cycle(true)
+    }
+
+    this.interval = clearInterval(this.interval)
+
+    return this
+  }
+
+  Carousel.prototype.next = function () {
+    if (this.sliding) return
+    return this.slide('next')
+  }
+
+  Carousel.prototype.prev = function () {
+    if (this.sliding) return
+    return this.slide('prev')
+  }
+
+  Carousel.prototype.slide = function (type, next) {
+    var $active   = this.$element.find('.item.active')
+    var $next     = next || this.getItemForDirection(type, $active)
+    var isCycling = this.interval
+    var direction = type == 'next' ? 'left' : 'right'
+    var that      = this
+
+    if ($next.hasClass('active')) return (this.sliding = false)
+
+    var relatedTarget = $next[0]
+    var slideEvent = $.Event('slide.bs.carousel', {
+      relatedTarget: relatedTarget,
+      direction: direction
+    })
+    this.$element.trigger(slideEvent)
+    if (slideEvent.isDefaultPrevented()) return
+
+    this.sliding = true
+
+    isCycling && this.pause()
+
+    if (this.$indicators.length) {
+      this.$indicators.find('.active').removeClass('active')
+      var $nextIndicator = $(this.$indicators.children()[this.getItemIndex($next)])
+      $nextIndicator && $nextIndicator.addClass('active')
+    }
+
+    var slidEvent = $.Event('slid.bs.carousel', { relatedTarget: relatedTarget, direction: direction }) // yes, "slid"
+    if ($.support.transition && this.$element.hasClass('slide')) {
+      $next.addClass(type)
+      $next[0].offsetWidth // force reflow
+      $active.addClass(direction)
+      $next.addClass(direction)
+      $active
+        .one('bsTransitionEnd', function () {
+          $next.removeClass([type, direction].join(' ')).addClass('active')
+          $active.removeClass(['active', direction].join(' '))
+          that.sliding = false
+          setTimeout(function () {
+            that.$element.trigger(slidEvent)
+          }, 0)
+        })
+        .emulateTransitionEnd(Carousel.TRANSITION_DURATION)
+    } else {
+      $active.removeClass('active')
+      $next.addClass('active')
+      this.sliding = false
+      this.$element.trigger(slidEvent)
+    }
+
+    isCycling && this.cycle()
+
+    return this
+  }
+
+
+  // CAROUSEL PLUGIN DEFINITION
+  // ==========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.carousel')
+      var options = $.extend({}, Carousel.DEFAULTS, $this.data(), typeof option == 'object' && option)
+      var action  = typeof option == 'string' ? option : options.slide
+
+      if (!data) $this.data('bs.carousel', (data = new Carousel(this, options)))
+      if (typeof option == 'number') data.to(option)
+      else if (action) data[action]()
+      else if (options.interval) data.pause().cycle()
+    })
+  }
+
+  var old = $.fn.carousel
+
+  $.fn.carousel             = Plugin
+  $.fn.carousel.Constructor = Carousel
+
+
+  // CAROUSEL NO CONFLICT
+  // ====================
+
+  $.fn.carousel.noConflict = function () {
+    $.fn.carousel = old
+    return this
+  }
+
+
+  // CAROUSEL DATA-API
+  // =================
+
+  var clickHandler = function (e) {
+    var href
+    var $this   = $(this)
+    var $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) // strip for ie7
+    if (!$target.hasClass('carousel')) return
+    var options = $.extend({}, $target.data(), $this.data())
+    var slideIndex = $this.attr('data-slide-to')
+    if (slideIndex) options.interval = false
+
+    Plugin.call($target, options)
+
+    if (slideIndex) {
+      $target.data('bs.carousel').to(slideIndex)
+    }
+
+    e.preventDefault()
+  }
+
+  $(document)
+    .on('click.bs.carousel.data-api', '[data-slide]', clickHandler)
+    .on('click.bs.carousel.data-api', '[data-slide-to]', clickHandler)
+
+  $(window).on('load', function () {
+    $('[data-ride="carousel"]').each(function () {
+      var $carousel = $(this)
+      Plugin.call($carousel, $carousel.data())
+    })
+  })
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: collapse.js v3.3.7
+ * http://getbootstrap.com/javascript/#collapse
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+/* jshint latedef: false */
+
++function ($) {
+  'use strict';
+
+  // COLLAPSE PUBLIC CLASS DEFINITION
+  // ================================
+
+  var Collapse = function (element, options) {
+    this.$element      = $(element)
+    this.options       = $.extend({}, Collapse.DEFAULTS, options)
+    this.$trigger      = $('[data-toggle="collapse"][href="#' + element.id + '"],' +
+                           '[data-toggle="collapse"][data-target="#' + element.id + '"]')
+    this.transitioning = null
+
+    if (this.options.parent) {
+      this.$parent = this.getParent()
+    } else {
+      this.addAriaAndCollapsedClass(this.$element, this.$trigger)
+    }
+
+    if (this.options.toggle) this.toggle()
+  }
+
+  Collapse.VERSION  = '3.3.7'
+
+  Collapse.TRANSITION_DURATION = 350
+
+  Collapse.DEFAULTS = {
+    toggle: true
+  }
+
+  Collapse.prototype.dimension = function () {
+    var hasWidth = this.$element.hasClass('width')
+    return hasWidth ? 'width' : 'height'
+  }
+
+  Collapse.prototype.show = function () {
+    if (this.transitioning || this.$element.hasClass('in')) return
+
+    var activesData
+    var actives = this.$parent && this.$parent.children('.panel').children('.in, .collapsing')
+
+    if (actives && actives.length) {
+      activesData = actives.data('bs.collapse')
+      if (activesData && activesData.transitioning) return
+    }
+
+    var startEvent = $.Event('show.bs.collapse')
+    this.$element.trigger(startEvent)
+    if (startEvent.isDefaultPrevented()) return
+
+    if (actives && actives.length) {
+      Plugin.call(actives, 'hide')
+      activesData || actives.data('bs.collapse', null)
+    }
+
+    var dimension = this.dimension()
+
+    this.$element
+      .removeClass('collapse')
+      .addClass('collapsing')[dimension](0)
+      .attr('aria-expanded', true)
+
+    this.$trigger
+      .removeClass('collapsed')
+      .attr('aria-expanded', true)
+
+    this.transitioning = 1
+
+    var complete = function () {
+      this.$element
+        .removeClass('collapsing')
+        .addClass('collapse in')[dimension]('')
+      this.transitioning = 0
+      this.$element
+        .trigger('shown.bs.collapse')
+    }
+
+    if (!$.support.transition) return complete.call(this)
+
+    var scrollSize = $.camelCase(['scroll', dimension].join('-'))
+
+    this.$element
+      .one('bsTransitionEnd', $.proxy(complete, this))
+      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)[dimension](this.$element[0][scrollSize])
+  }
+
+  Collapse.prototype.hide = function () {
+    if (this.transitioning || !this.$element.hasClass('in')) return
+
+    var startEvent = $.Event('hide.bs.collapse')
+    this.$element.trigger(startEvent)
+    if (startEvent.isDefaultPrevented()) return
+
+    var dimension = this.dimension()
+
+    this.$element[dimension](this.$element[dimension]())[0].offsetHeight
+
+    this.$element
+      .addClass('collapsing')
+      .removeClass('collapse in')
+      .attr('aria-expanded', false)
+
+    this.$trigger
+      .addClass('collapsed')
+      .attr('aria-expanded', false)
+
+    this.transitioning = 1
+
+    var complete = function () {
+      this.transitioning = 0
+      this.$element
+        .removeClass('collapsing')
+        .addClass('collapse')
+        .trigger('hidden.bs.collapse')
+    }
+
+    if (!$.support.transition) return complete.call(this)
+
+    this.$element
+      [dimension](0)
+      .one('bsTransitionEnd', $.proxy(complete, this))
+      .emulateTransitionEnd(Collapse.TRANSITION_DURATION)
+  }
+
+  Collapse.prototype.toggle = function () {
+    this[this.$element.hasClass('in') ? 'hide' : 'show']()
+  }
+
+  Collapse.prototype.getParent = function () {
+    return $(this.options.parent)
+      .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
+      .each($.proxy(function (i, element) {
+        var $element = $(element)
+        this.addAriaAndCollapsedClass(getTargetFromTrigger($element), $element)
+      }, this))
+      .end()
+  }
+
+  Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
+    var isOpen = $element.hasClass('in')
+
+    $element.attr('aria-expanded', isOpen)
+    $trigger
+      .toggleClass('collapsed', !isOpen)
+      .attr('aria-expanded', isOpen)
+  }
+
+  function getTargetFromTrigger($trigger) {
+    var href
+    var target = $trigger.attr('data-target')
+      || (href = $trigger.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '') // strip for ie7
+
+    return $(target)
+  }
+
+
+  // COLLAPSE PLUGIN DEFINITION
+  // ==========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.collapse')
+      var options = $.extend({}, Collapse.DEFAULTS, $this.data(), typeof option == 'object' && option)
+
+      if (!data && options.toggle && /show|hide/.test(option)) options.toggle = false
+      if (!data) $this.data('bs.collapse', (data = new Collapse(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.collapse
+
+  $.fn.collapse             = Plugin
+  $.fn.collapse.Constructor = Collapse
+
+
+  // COLLAPSE NO CONFLICT
+  // ====================
+
+  $.fn.collapse.noConflict = function () {
+    $.fn.collapse = old
+    return this
+  }
+
+
+  // COLLAPSE DATA-API
+  // =================
+
+  $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
+    var $this   = $(this)
+
+    if (!$this.attr('data-target')) e.preventDefault()
+
+    var $target = getTargetFromTrigger($this)
+    var data    = $target.data('bs.collapse')
+    var option  = data ? 'toggle' : $this.data()
+
+    Plugin.call($target, option)
+  })
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: dropdown.js v3.3.7
+ * http://getbootstrap.com/javascript/#dropdowns
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // DROPDOWN CLASS DEFINITION
+  // =========================
+
+  var backdrop = '.dropdown-backdrop'
+  var toggle   = '[data-toggle="dropdown"]'
+  var Dropdown = function (element) {
+    $(element).on('click.bs.dropdown', this.toggle)
+  }
+
+  Dropdown.VERSION = '3.3.7'
+
+  function getParent($this) {
+    var selector = $this.attr('data-target')
+
+    if (!selector) {
+      selector = $this.attr('href')
+      selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+    }
+
+    var $parent = selector && $(selector)
+
+    return $parent && $parent.length ? $parent : $this.parent()
+  }
+
+  function clearMenus(e) {
+    if (e && e.which === 3) return
+    $(backdrop).remove()
+    $(toggle).each(function () {
+      var $this         = $(this)
+      var $parent       = getParent($this)
+      var relatedTarget = { relatedTarget: this }
+
+      if (!$parent.hasClass('open')) return
+
+      if (e && e.type == 'click' && /input|textarea/i.test(e.target.tagName) && $.contains($parent[0], e.target)) return
+
+      $parent.trigger(e = $.Event('hide.bs.dropdown', relatedTarget))
+
+      if (e.isDefaultPrevented()) return
+
+      $this.attr('aria-expanded', 'false')
+      $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
+    })
+  }
+
+  Dropdown.prototype.toggle = function (e) {
+    var $this = $(this)
+
+    if ($this.is('.disabled, :disabled')) return
+
+    var $parent  = getParent($this)
+    var isActive = $parent.hasClass('open')
+
+    clearMenus()
+
+    if (!isActive) {
+      if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
+        // if mobile we use a backdrop because click events don't delegate
+        $(document.createElement('div'))
+          .addClass('dropdown-backdrop')
+          .insertAfter($(this))
+          .on('click', clearMenus)
+      }
+
+      var relatedTarget = { relatedTarget: this }
+      $parent.trigger(e = $.Event('show.bs.dropdown', relatedTarget))
+
+      if (e.isDefaultPrevented()) return
+
+      $this
+        .trigger('focus')
+        .attr('aria-expanded', 'true')
+
+      $parent
+        .toggleClass('open')
+        .trigger($.Event('shown.bs.dropdown', relatedTarget))
+    }
+
+    return false
+  }
+
+  Dropdown.prototype.keydown = function (e) {
+    if (!/(38|40|27|32)/.test(e.which) || /input|textarea/i.test(e.target.tagName)) return
+
+    var $this = $(this)
+
+    e.preventDefault()
+    e.stopPropagation()
+
+    if ($this.is('.disabled, :disabled')) return
+
+    var $parent  = getParent($this)
+    var isActive = $parent.hasClass('open')
+
+    if (!isActive && e.which != 27 || isActive && e.which == 27) {
+      if (e.which == 27) $parent.find(toggle).trigger('focus')
+      return $this.trigger('click')
+    }
+
+    var desc = ' li:not(.disabled):visible a'
+    var $items = $parent.find('.dropdown-menu' + desc)
+
+    if (!$items.length) return
+
+    var index = $items.index(e.target)
+
+    if (e.which == 38 && index > 0)                 index--         // up
+    if (e.which == 40 && index < $items.length - 1) index++         // down
+    if (!~index)                                    index = 0
+
+    $items.eq(index).trigger('focus')
+  }
+
+
+  // DROPDOWN PLUGIN DEFINITION
+  // ==========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this = $(this)
+      var data  = $this.data('bs.dropdown')
+
+      if (!data) $this.data('bs.dropdown', (data = new Dropdown(this)))
+      if (typeof option == 'string') data[option].call($this)
+    })
+  }
+
+  var old = $.fn.dropdown
+
+  $.fn.dropdown             = Plugin
+  $.fn.dropdown.Constructor = Dropdown
+
+
+  // DROPDOWN NO CONFLICT
+  // ====================
+
+  $.fn.dropdown.noConflict = function () {
+    $.fn.dropdown = old
+    return this
+  }
+
+
+  // APPLY TO STANDARD DROPDOWN ELEMENTS
+  // ===================================
+
+  $(document)
+    .on('click.bs.dropdown.data-api', clearMenus)
+    .on('click.bs.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
+    .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
+    .on('keydown.bs.dropdown.data-api', toggle, Dropdown.prototype.keydown)
+    .on('keydown.bs.dropdown.data-api', '.dropdown-menu', Dropdown.prototype.keydown)
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: modal.js v3.3.7
+ * http://getbootstrap.com/javascript/#modals
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // MODAL CLASS DEFINITION
+  // ======================
+
+  var Modal = function (element, options) {
+    this.options             = options
+    this.$body               = $(document.body)
+    this.$element            = $(element)
+    this.$dialog             = this.$element.find('.modal-dialog')
+    this.$backdrop           = null
+    this.isShown             = null
+    this.originalBodyPad     = null
+    this.scrollbarWidth      = 0
+    this.ignoreBackdropClick = false
+
+    if (this.options.remote) {
+      this.$element
+        .find('.modal-content')
+        .load(this.options.remote, $.proxy(function () {
+          this.$element.trigger('loaded.bs.modal')
+        }, this))
+    }
+  }
+
+  Modal.VERSION  = '3.3.7'
+
+  Modal.TRANSITION_DURATION = 300
+  Modal.BACKDROP_TRANSITION_DURATION = 150
+
+  Modal.DEFAULTS = {
+    backdrop: true,
+    keyboard: true,
+    show: true
+  }
+
+  Modal.prototype.toggle = function (_relatedTarget) {
+    return this.isShown ? this.hide() : this.show(_relatedTarget)
+  }
+
+  Modal.prototype.show = function (_relatedTarget) {
+    var that = this
+    var e    = $.Event('show.bs.modal', { relatedTarget: _relatedTarget })
+
+    this.$element.trigger(e)
+
+    if (this.isShown || e.isDefaultPrevented()) return
+
+    this.isShown = true
+
+    this.checkScrollbar()
+    this.setScrollbar()
+    this.$body.addClass('modal-open')
+
+    this.escape()
+    this.resize()
+
+    this.$element.on('click.dismiss.bs.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
+
+    this.$dialog.on('mousedown.dismiss.bs.modal', function () {
+      that.$element.one('mouseup.dismiss.bs.modal', function (e) {
+        if ($(e.target).is(that.$element)) that.ignoreBackdropClick = true
+      })
+    })
+
+    this.backdrop(function () {
+      var transition = $.support.transition && that.$element.hasClass('fade')
+
+      if (!that.$element.parent().length) {
+        that.$element.appendTo(that.$body) // don't move modals dom position
+      }
+
+      that.$element
+        .show()
+        .scrollTop(0)
+
+      that.adjustDialog()
+
+      if (transition) {
+        that.$element[0].offsetWidth // force reflow
+      }
+
+      that.$element.addClass('in')
+
+      that.enforceFocus()
+
+      var e = $.Event('shown.bs.modal', { relatedTarget: _relatedTarget })
+
+      transition ?
+        that.$dialog // wait for modal to slide in
+          .one('bsTransitionEnd', function () {
+            that.$element.trigger('focus').trigger(e)
+          })
+          .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
+        that.$element.trigger('focus').trigger(e)
+    })
+  }
+
+  Modal.prototype.hide = function (e) {
+    if (e) e.preventDefault()
+
+    e = $.Event('hide.bs.modal')
+
+    this.$element.trigger(e)
+
+    if (!this.isShown || e.isDefaultPrevented()) return
+
+    this.isShown = false
+
+    this.escape()
+    this.resize()
+
+    $(document).off('focusin.bs.modal')
+
+    this.$element
+      .removeClass('in')
+      .off('click.dismiss.bs.modal')
+      .off('mouseup.dismiss.bs.modal')
+
+    this.$dialog.off('mousedown.dismiss.bs.modal')
+
+    $.support.transition && this.$element.hasClass('fade') ?
+      this.$element
+        .one('bsTransitionEnd', $.proxy(this.hideModal, this))
+        .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
+      this.hideModal()
+  }
+
+  Modal.prototype.enforceFocus = function () {
+    $(document)
+      .off('focusin.bs.modal') // guard against infinite focus loop
+      .on('focusin.bs.modal', $.proxy(function (e) {
+        if (document !== e.target &&
+            this.$element[0] !== e.target &&
+            !this.$element.has(e.target).length) {
+          this.$element.trigger('focus')
+        }
+      }, this))
+  }
+
+  Modal.prototype.escape = function () {
+    if (this.isShown && this.options.keyboard) {
+      this.$element.on('keydown.dismiss.bs.modal', $.proxy(function (e) {
+        e.which == 27 && this.hide()
+      }, this))
+    } else if (!this.isShown) {
+      this.$element.off('keydown.dismiss.bs.modal')
+    }
+  }
+
+  Modal.prototype.resize = function () {
+    if (this.isShown) {
+      $(window).on('resize.bs.modal', $.proxy(this.handleUpdate, this))
+    } else {
+      $(window).off('resize.bs.modal')
+    }
+  }
+
+  Modal.prototype.hideModal = function () {
+    var that = this
+    this.$element.hide()
+    this.backdrop(function () {
+      that.$body.removeClass('modal-open')
+      that.resetAdjustments()
+      that.resetScrollbar()
+      that.$element.trigger('hidden.bs.modal')
+    })
+  }
+
+  Modal.prototype.removeBackdrop = function () {
+    this.$backdrop && this.$backdrop.remove()
+    this.$backdrop = null
+  }
+
+  Modal.prototype.backdrop = function (callback) {
+    var that = this
+    var animate = this.$element.hasClass('fade') ? 'fade' : ''
+
+    if (this.isShown && this.options.backdrop) {
+      var doAnimate = $.support.transition && animate
+
+      this.$backdrop = $(document.createElement('div'))
+        .addClass('modal-backdrop ' + animate)
+        .appendTo(this.$body)
+
+      this.$element.on('click.dismiss.bs.modal', $.proxy(function (e) {
+        if (this.ignoreBackdropClick) {
+          this.ignoreBackdropClick = false
+          return
+        }
+        if (e.target !== e.currentTarget) return
+        this.options.backdrop == 'static'
+          ? this.$element[0].focus()
+          : this.hide()
+      }, this))
+
+      if (doAnimate) this.$backdrop[0].offsetWidth // force reflow
+
+      this.$backdrop.addClass('in')
+
+      if (!callback) return
+
+      doAnimate ?
+        this.$backdrop
+          .one('bsTransitionEnd', callback)
+          .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
+        callback()
+
+    } else if (!this.isShown && this.$backdrop) {
+      this.$backdrop.removeClass('in')
+
+      var callbackRemove = function () {
+        that.removeBackdrop()
+        callback && callback()
+      }
+      $.support.transition && this.$element.hasClass('fade') ?
+        this.$backdrop
+          .one('bsTransitionEnd', callbackRemove)
+          .emulateTransitionEnd(Modal.BACKDROP_TRANSITION_DURATION) :
+        callbackRemove()
+
+    } else if (callback) {
+      callback()
+    }
+  }
+
+  // these following methods are used to handle overflowing modals
+
+  Modal.prototype.handleUpdate = function () {
+    this.adjustDialog()
+  }
+
+  Modal.prototype.adjustDialog = function () {
+    var modalIsOverflowing = this.$element[0].scrollHeight > document.documentElement.clientHeight
+
+    this.$element.css({
+      paddingLeft:  !this.bodyIsOverflowing && modalIsOverflowing ? this.scrollbarWidth : '',
+      paddingRight: this.bodyIsOverflowing && !modalIsOverflowing ? this.scrollbarWidth : ''
+    })
+  }
+
+  Modal.prototype.resetAdjustments = function () {
+    this.$element.css({
+      paddingLeft: '',
+      paddingRight: ''
+    })
+  }
+
+  Modal.prototype.checkScrollbar = function () {
+    var fullWindowWidth = window.innerWidth
+    if (!fullWindowWidth) { // workaround for missing window.innerWidth in IE8
+      var documentElementRect = document.documentElement.getBoundingClientRect()
+      fullWindowWidth = documentElementRect.right - Math.abs(documentElementRect.left)
+    }
+    this.bodyIsOverflowing = document.body.clientWidth < fullWindowWidth
+    this.scrollbarWidth = this.measureScrollbar()
+  }
+
+  Modal.prototype.setScrollbar = function () {
+    var bodyPad = parseInt((this.$body.css('padding-right') || 0), 10)
+    this.originalBodyPad = document.body.style.paddingRight || ''
+    if (this.bodyIsOverflowing) this.$body.css('padding-right', bodyPad + this.scrollbarWidth)
+  }
+
+  Modal.prototype.resetScrollbar = function () {
+    this.$body.css('padding-right', this.originalBodyPad)
+  }
+
+  Modal.prototype.measureScrollbar = function () { // thx walsh
+    var scrollDiv = document.createElement('div')
+    scrollDiv.className = 'modal-scrollbar-measure'
+    this.$body.append(scrollDiv)
+    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
+    this.$body[0].removeChild(scrollDiv)
+    return scrollbarWidth
+  }
+
+
+  // MODAL PLUGIN DEFINITION
+  // =======================
+
+  function Plugin(option, _relatedTarget) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.modal')
+      var options = $.extend({}, Modal.DEFAULTS, $this.data(), typeof option == 'object' && option)
+
+      if (!data) $this.data('bs.modal', (data = new Modal(this, options)))
+      if (typeof option == 'string') data[option](_relatedTarget)
+      else if (options.show) data.show(_relatedTarget)
+    })
+  }
+
+  var old = $.fn.modal
+
+  $.fn.modal             = Plugin
+  $.fn.modal.Constructor = Modal
+
+
+  // MODAL NO CONFLICT
+  // =================
+
+  $.fn.modal.noConflict = function () {
+    $.fn.modal = old
+    return this
+  }
+
+
+  // MODAL DATA-API
+  // ==============
+
+  $(document).on('click.bs.modal.data-api', '[data-toggle="modal"]', function (e) {
+    var $this   = $(this)
+    var href    = $this.attr('href')
+    var $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) // strip for ie7
+    var option  = $target.data('bs.modal') ? 'toggle' : $.extend({ remote: !/#/.test(href) && href }, $target.data(), $this.data())
+
+    if ($this.is('a')) e.preventDefault()
+
+    $target.one('show.bs.modal', function (showEvent) {
+      if (showEvent.isDefaultPrevented()) return // only register focus restorer if modal will actually get shown
+      $target.one('hidden.bs.modal', function () {
+        $this.is(':visible') && $this.trigger('focus')
+      })
+    })
+    Plugin.call($target, option, this)
+  })
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: tooltip.js v3.3.7
+ * http://getbootstrap.com/javascript/#tooltip
+ * Inspired by the original jQuery.tipsy by Jason Frame
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // TOOLTIP PUBLIC CLASS DEFINITION
+  // ===============================
+
+  var Tooltip = function (element, options) {
+    this.type       = null
+    this.options    = null
+    this.enabled    = null
+    this.timeout    = null
+    this.hoverState = null
+    this.$element   = null
+    this.inState    = null
+
+    this.init('tooltip', element, options)
+  }
+
+  Tooltip.VERSION  = '3.3.7'
+
+  Tooltip.TRANSITION_DURATION = 150
+
+  Tooltip.DEFAULTS = {
+    animation: true,
+    placement: 'top',
+    selector: false,
+    template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+    trigger: 'hover focus',
+    title: '',
+    delay: 0,
+    html: false,
+    container: false,
+    viewport: {
+      selector: 'body',
+      padding: 0
+    }
+  }
+
+  Tooltip.prototype.init = function (type, element, options) {
+    this.enabled   = true
+    this.type      = type
+    this.$element  = $(element)
+    this.options   = this.getOptions(options)
+    this.$viewport = this.options.viewport && $($.isFunction(this.options.viewport) ? this.options.viewport.call(this, this.$element) : (this.options.viewport.selector || this.options.viewport))
+    this.inState   = { click: false, hover: false, focus: false }
+
+    if (this.$element[0] instanceof document.constructor && !this.options.selector) {
+      throw new Error('`selector` option must be specified when initializing ' + this.type + ' on the window.document object!')
+    }
+
+    var triggers = this.options.trigger.split(' ')
+
+    for (var i = triggers.length; i--;) {
+      var trigger = triggers[i]
+
+      if (trigger == 'click') {
+        this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this))
+      } else if (trigger != 'manual') {
+        var eventIn  = trigger == 'hover' ? 'mouseenter' : 'focusin'
+        var eventOut = trigger == 'hover' ? 'mouseleave' : 'focusout'
+
+        this.$element.on(eventIn  + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
+        this.$element.on(eventOut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
+      }
+    }
+
+    this.options.selector ?
+      (this._options = $.extend({}, this.options, { trigger: 'manual', selector: '' })) :
+      this.fixTitle()
+  }
+
+  Tooltip.prototype.getDefaults = function () {
+    return Tooltip.DEFAULTS
+  }
+
+  Tooltip.prototype.getOptions = function (options) {
+    options = $.extend({}, this.getDefaults(), this.$element.data(), options)
+
+    if (options.delay && typeof options.delay == 'number') {
+      options.delay = {
+        show: options.delay,
+        hide: options.delay
+      }
+    }
+
+    return options
+  }
+
+  Tooltip.prototype.getDelegateOptions = function () {
+    var options  = {}
+    var defaults = this.getDefaults()
+
+    this._options && $.each(this._options, function (key, value) {
+      if (defaults[key] != value) options[key] = value
+    })
+
+    return options
+  }
+
+  Tooltip.prototype.enter = function (obj) {
+    var self = obj instanceof this.constructor ?
+      obj : $(obj.currentTarget).data('bs.' + this.type)
+
+    if (!self) {
+      self = new this.constructor(obj.currentTarget, this.getDelegateOptions())
+      $(obj.currentTarget).data('bs.' + this.type, self)
+    }
+
+    if (obj instanceof $.Event) {
+      self.inState[obj.type == 'focusin' ? 'focus' : 'hover'] = true
+    }
+
+    if (self.tip().hasClass('in') || self.hoverState == 'in') {
+      self.hoverState = 'in'
+      return
+    }
+
+    clearTimeout(self.timeout)
+
+    self.hoverState = 'in'
+
+    if (!self.options.delay || !self.options.delay.show) return self.show()
+
+    self.timeout = setTimeout(function () {
+      if (self.hoverState == 'in') self.show()
+    }, self.options.delay.show)
+  }
+
+  Tooltip.prototype.isInStateTrue = function () {
+    for (var key in this.inState) {
+      if (this.inState[key]) return true
+    }
+
+    return false
+  }
+
+  Tooltip.prototype.leave = function (obj) {
+    var self = obj instanceof this.constructor ?
+      obj : $(obj.currentTarget).data('bs.' + this.type)
+
+    if (!self) {
+      self = new this.constructor(obj.currentTarget, this.getDelegateOptions())
+      $(obj.currentTarget).data('bs.' + this.type, self)
+    }
+
+    if (obj instanceof $.Event) {
+      self.inState[obj.type == 'focusout' ? 'focus' : 'hover'] = false
+    }
+
+    if (self.isInStateTrue()) return
+
+    clearTimeout(self.timeout)
+
+    self.hoverState = 'out'
+
+    if (!self.options.delay || !self.options.delay.hide) return self.hide()
+
+    self.timeout = setTimeout(function () {
+      if (self.hoverState == 'out') self.hide()
+    }, self.options.delay.hide)
+  }
+
+  Tooltip.prototype.show = function () {
+    var e = $.Event('show.bs.' + this.type)
+
+    if (this.hasContent() && this.enabled) {
+      this.$element.trigger(e)
+
+      var inDom = $.contains(this.$element[0].ownerDocument.documentElement, this.$element[0])
+      if (e.isDefaultPrevented() || !inDom) return
+      var that = this
+
+      var $tip = this.tip()
+
+      var tipId = this.getUID(this.type)
+
+      this.setContent()
+      $tip.attr('id', tipId)
+      this.$element.attr('aria-describedby', tipId)
+
+      if (this.options.animation) $tip.addClass('fade')
+
+      var placement = typeof this.options.placement == 'function' ?
+        this.options.placement.call(this, $tip[0], this.$element[0]) :
+        this.options.placement
+
+      var autoToken = /\s?auto?\s?/i
+      var autoPlace = autoToken.test(placement)
+      if (autoPlace) placement = placement.replace(autoToken, '') || 'top'
+
+      $tip
+        .detach()
+        .css({ top: 0, left: 0, display: 'block' })
+        .addClass(placement)
+        .data('bs.' + this.type, this)
+
+      this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
+      this.$element.trigger('inserted.bs.' + this.type)
+
+      var pos          = this.getPosition()
+      var actualWidth  = $tip[0].offsetWidth
+      var actualHeight = $tip[0].offsetHeight
+
+      if (autoPlace) {
+        var orgPlacement = placement
+        var viewportDim = this.getPosition(this.$viewport)
+
+        placement = placement == 'bottom' && pos.bottom + actualHeight > viewportDim.bottom ? 'top'    :
+                    placement == 'top'    && pos.top    - actualHeight < viewportDim.top    ? 'bottom' :
+                    placement == 'right'  && pos.right  + actualWidth  > viewportDim.width  ? 'left'   :
+                    placement == 'left'   && pos.left   - actualWidth  < viewportDim.left   ? 'right'  :
+                    placement
+
+        $tip
+          .removeClass(orgPlacement)
+          .addClass(placement)
+      }
+
+      var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight)
+
+      this.applyPlacement(calculatedOffset, placement)
+
+      var complete = function () {
+        var prevHoverState = that.hoverState
+        that.$element.trigger('shown.bs.' + that.type)
+        that.hoverState = null
+
+        if (prevHoverState == 'out') that.leave(that)
+      }
+
+      $.support.transition && this.$tip.hasClass('fade') ?
+        $tip
+          .one('bsTransitionEnd', complete)
+          .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
+        complete()
+    }
+  }
+
+  Tooltip.prototype.applyPlacement = function (offset, placement) {
+    var $tip   = this.tip()
+    var width  = $tip[0].offsetWidth
+    var height = $tip[0].offsetHeight
+
+    // manually read margins because getBoundingClientRect includes difference
+    var marginTop = parseInt($tip.css('margin-top'), 10)
+    var marginLeft = parseInt($tip.css('margin-left'), 10)
+
+    // we must check for NaN for ie 8/9
+    if (isNaN(marginTop))  marginTop  = 0
+    if (isNaN(marginLeft)) marginLeft = 0
+
+    offset.top  += marginTop
+    offset.left += marginLeft
+
+    // $.fn.offset doesn't round pixel values
+    // so we use setOffset directly with our own function B-0
+    $.offset.setOffset($tip[0], $.extend({
+      using: function (props) {
+        $tip.css({
+          top: Math.round(props.top),
+          left: Math.round(props.left)
+        })
+      }
+    }, offset), 0)
+
+    $tip.addClass('in')
+
+    // check to see if placing tip in new offset caused the tip to resize itself
+    var actualWidth  = $tip[0].offsetWidth
+    var actualHeight = $tip[0].offsetHeight
+
+    if (placement == 'top' && actualHeight != height) {
+      offset.top = offset.top + height - actualHeight
+    }
+
+    var delta = this.getViewportAdjustedDelta(placement, offset, actualWidth, actualHeight)
+
+    if (delta.left) offset.left += delta.left
+    else offset.top += delta.top
+
+    var isVertical          = /top|bottom/.test(placement)
+    var arrowDelta          = isVertical ? delta.left * 2 - width + actualWidth : delta.top * 2 - height + actualHeight
+    var arrowOffsetPosition = isVertical ? 'offsetWidth' : 'offsetHeight'
+
+    $tip.offset(offset)
+    this.replaceArrow(arrowDelta, $tip[0][arrowOffsetPosition], isVertical)
+  }
+
+  Tooltip.prototype.replaceArrow = function (delta, dimension, isVertical) {
+    this.arrow()
+      .css(isVertical ? 'left' : 'top', 50 * (1 - delta / dimension) + '%')
+      .css(isVertical ? 'top' : 'left', '')
+  }
+
+  Tooltip.prototype.setContent = function () {
+    var $tip  = this.tip()
+    var title = this.getTitle()
+
+    $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
+    $tip.removeClass('fade in top bottom left right')
+  }
+
+  Tooltip.prototype.hide = function (callback) {
+    var that = this
+    var $tip = $(this.$tip)
+    var e    = $.Event('hide.bs.' + this.type)
+
+    function complete() {
+      if (that.hoverState != 'in') $tip.detach()
+      if (that.$element) { // TODO: Check whether guarding this code with this `if` is really necessary.
+        that.$element
+          .removeAttr('aria-describedby')
+          .trigger('hidden.bs.' + that.type)
+      }
+      callback && callback()
+    }
+
+    this.$element.trigger(e)
+
+    if (e.isDefaultPrevented()) return
+
+    $tip.removeClass('in')
+
+    $.support.transition && $tip.hasClass('fade') ?
+      $tip
+        .one('bsTransitionEnd', complete)
+        .emulateTransitionEnd(Tooltip.TRANSITION_DURATION) :
+      complete()
+
+    this.hoverState = null
+
+    return this
+  }
+
+  Tooltip.prototype.fixTitle = function () {
+    var $e = this.$element
+    if ($e.attr('title') || typeof $e.attr('data-original-title') != 'string') {
+      $e.attr('data-original-title', $e.attr('title') || '').attr('title', '')
+    }
+  }
+
+  Tooltip.prototype.hasContent = function () {
+    return this.getTitle()
+  }
+
+  Tooltip.prototype.getPosition = function ($element) {
+    $element   = $element || this.$element
+
+    var el     = $element[0]
+    var isBody = el.tagName == 'BODY'
+
+    var elRect    = el.getBoundingClientRect()
+    if (elRect.width == null) {
+      // width and height are missing in IE8, so compute them manually; see https://github.com/twbs/bootstrap/issues/14093
+      elRect = $.extend({}, elRect, { width: elRect.right - elRect.left, height: elRect.bottom - elRect.top })
+    }
+    var isSvg = window.SVGElement && el instanceof window.SVGElement
+    // Avoid using $.offset() on SVGs since it gives incorrect results in jQuery 3.
+    // See https://github.com/twbs/bootstrap/issues/20280
+    var elOffset  = isBody ? { top: 0, left: 0 } : (isSvg ? null : $element.offset())
+    var scroll    = { scroll: isBody ? document.documentElement.scrollTop || document.body.scrollTop : $element.scrollTop() }
+    var outerDims = isBody ? { width: $(window).width(), height: $(window).height() } : null
+
+    return $.extend({}, elRect, scroll, outerDims, elOffset)
+  }
+
+  Tooltip.prototype.getCalculatedOffset = function (placement, pos, actualWidth, actualHeight) {
+    return placement == 'bottom' ? { top: pos.top + pos.height,   left: pos.left + pos.width / 2 - actualWidth / 2 } :
+           placement == 'top'    ? { top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2 } :
+           placement == 'left'   ? { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth } :
+        /* placement == 'right' */ { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width }
+
+  }
+
+  Tooltip.prototype.getViewportAdjustedDelta = function (placement, pos, actualWidth, actualHeight) {
+    var delta = { top: 0, left: 0 }
+    if (!this.$viewport) return delta
+
+    var viewportPadding = this.options.viewport && this.options.viewport.padding || 0
+    var viewportDimensions = this.getPosition(this.$viewport)
+
+    if (/right|left/.test(placement)) {
+      var topEdgeOffset    = pos.top - viewportPadding - viewportDimensions.scroll
+      var bottomEdgeOffset = pos.top + viewportPadding - viewportDimensions.scroll + actualHeight
+      if (topEdgeOffset < viewportDimensions.top) { // top overflow
+        delta.top = viewportDimensions.top - topEdgeOffset
+      } else if (bottomEdgeOffset > viewportDimensions.top + viewportDimensions.height) { // bottom overflow
+        delta.top = viewportDimensions.top + viewportDimensions.height - bottomEdgeOffset
+      }
+    } else {
+      var leftEdgeOffset  = pos.left - viewportPadding
+      var rightEdgeOffset = pos.left + viewportPadding + actualWidth
+      if (leftEdgeOffset < viewportDimensions.left) { // left overflow
+        delta.left = viewportDimensions.left - leftEdgeOffset
+      } else if (rightEdgeOffset > viewportDimensions.right) { // right overflow
+        delta.left = viewportDimensions.left + viewportDimensions.width - rightEdgeOffset
+      }
+    }
+
+    return delta
+  }
+
+  Tooltip.prototype.getTitle = function () {
+    var title
+    var $e = this.$element
+    var o  = this.options
+
+    title = $e.attr('data-original-title')
+      || (typeof o.title == 'function' ? o.title.call($e[0]) :  o.title)
+
+    return title
+  }
+
+  Tooltip.prototype.getUID = function (prefix) {
+    do prefix += ~~(Math.random() * 1000000)
+    while (document.getElementById(prefix))
+    return prefix
+  }
+
+  Tooltip.prototype.tip = function () {
+    if (!this.$tip) {
+      this.$tip = $(this.options.template)
+      if (this.$tip.length != 1) {
+        throw new Error(this.type + ' `template` option must consist of exactly 1 top-level element!')
+      }
+    }
+    return this.$tip
+  }
+
+  Tooltip.prototype.arrow = function () {
+    return (this.$arrow = this.$arrow || this.tip().find('.tooltip-arrow'))
+  }
+
+  Tooltip.prototype.enable = function () {
+    this.enabled = true
+  }
+
+  Tooltip.prototype.disable = function () {
+    this.enabled = false
+  }
+
+  Tooltip.prototype.toggleEnabled = function () {
+    this.enabled = !this.enabled
+  }
+
+  Tooltip.prototype.toggle = function (e) {
+    var self = this
+    if (e) {
+      self = $(e.currentTarget).data('bs.' + this.type)
+      if (!self) {
+        self = new this.constructor(e.currentTarget, this.getDelegateOptions())
+        $(e.currentTarget).data('bs.' + this.type, self)
+      }
+    }
+
+    if (e) {
+      self.inState.click = !self.inState.click
+      if (self.isInStateTrue()) self.enter(self)
+      else self.leave(self)
+    } else {
+      self.tip().hasClass('in') ? self.leave(self) : self.enter(self)
+    }
+  }
+
+  Tooltip.prototype.destroy = function () {
+    var that = this
+    clearTimeout(this.timeout)
+    this.hide(function () {
+      that.$element.off('.' + that.type).removeData('bs.' + that.type)
+      if (that.$tip) {
+        that.$tip.detach()
+      }
+      that.$tip = null
+      that.$arrow = null
+      that.$viewport = null
+      that.$element = null
+    })
+  }
+
+
+  // TOOLTIP PLUGIN DEFINITION
+  // =========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.tooltip')
+      var options = typeof option == 'object' && option
+
+      if (!data && /destroy|hide/.test(option)) return
+      if (!data) $this.data('bs.tooltip', (data = new Tooltip(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.tooltip
+
+  $.fn.tooltip             = Plugin
+  $.fn.tooltip.Constructor = Tooltip
+
+
+  // TOOLTIP NO CONFLICT
+  // ===================
+
+  $.fn.tooltip.noConflict = function () {
+    $.fn.tooltip = old
+    return this
+  }
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: popover.js v3.3.7
+ * http://getbootstrap.com/javascript/#popovers
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // POPOVER PUBLIC CLASS DEFINITION
+  // ===============================
+
+  var Popover = function (element, options) {
+    this.init('popover', element, options)
+  }
+
+  if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
+
+  Popover.VERSION  = '3.3.7'
+
+  Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
+    placement: 'right',
+    trigger: 'click',
+    content: '',
+    template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+  })
+
+
+  // NOTE: POPOVER EXTENDS tooltip.js
+  // ================================
+
+  Popover.prototype = $.extend({}, $.fn.tooltip.Constructor.prototype)
+
+  Popover.prototype.constructor = Popover
+
+  Popover.prototype.getDefaults = function () {
+    return Popover.DEFAULTS
+  }
+
+  Popover.prototype.setContent = function () {
+    var $tip    = this.tip()
+    var title   = this.getTitle()
+    var content = this.getContent()
+
+    $tip.find('.popover-title')[this.options.html ? 'html' : 'text'](title)
+    $tip.find('.popover-content').children().detach().end()[ // we use append for html objects to maintain js events
+      this.options.html ? (typeof content == 'string' ? 'html' : 'append') : 'text'
+    ](content)
+
+    $tip.removeClass('fade top bottom left right in')
+
+    // IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
+    // this manually by checking the contents.
+    if (!$tip.find('.popover-title').html()) $tip.find('.popover-title').hide()
+  }
+
+  Popover.prototype.hasContent = function () {
+    return this.getTitle() || this.getContent()
+  }
+
+  Popover.prototype.getContent = function () {
+    var $e = this.$element
+    var o  = this.options
+
+    return $e.attr('data-content')
+      || (typeof o.content == 'function' ?
+            o.content.call($e[0]) :
+            o.content)
+  }
+
+  Popover.prototype.arrow = function () {
+    return (this.$arrow = this.$arrow || this.tip().find('.arrow'))
+  }
+
+
+  // POPOVER PLUGIN DEFINITION
+  // =========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.popover')
+      var options = typeof option == 'object' && option
+
+      if (!data && /destroy|hide/.test(option)) return
+      if (!data) $this.data('bs.popover', (data = new Popover(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.popover
+
+  $.fn.popover             = Plugin
+  $.fn.popover.Constructor = Popover
+
+
+  // POPOVER NO CONFLICT
+  // ===================
+
+  $.fn.popover.noConflict = function () {
+    $.fn.popover = old
+    return this
+  }
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: scrollspy.js v3.3.7
+ * http://getbootstrap.com/javascript/#scrollspy
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // SCROLLSPY CLASS DEFINITION
+  // ==========================
+
+  function ScrollSpy(element, options) {
+    this.$body          = $(document.body)
+    this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
+    this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+    this.selector       = (this.options.target || '') + ' .nav li > a'
+    this.offsets        = []
+    this.targets        = []
+    this.activeTarget   = null
+    this.scrollHeight   = 0
+
+    this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
+    this.refresh()
+    this.process()
+  }
+
+  ScrollSpy.VERSION  = '3.3.7'
+
+  ScrollSpy.DEFAULTS = {
+    offset: 10
+  }
+
+  ScrollSpy.prototype.getScrollHeight = function () {
+    return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+  }
+
+  ScrollSpy.prototype.refresh = function () {
+    var that          = this
+    var offsetMethod  = 'offset'
+    var offsetBase    = 0
+
+    this.offsets      = []
+    this.targets      = []
+    this.scrollHeight = this.getScrollHeight()
+
+    if (!$.isWindow(this.$scrollElement[0])) {
+      offsetMethod = 'position'
+      offsetBase   = this.$scrollElement.scrollTop()
+    }
+
+    this.$body
+      .find(this.selector)
+      .map(function () {
+        var $el   = $(this)
+        var href  = $el.data('target') || $el.attr('href')
+        var $href = /^#./.test(href) && $(href)
+
+        return ($href
+          && $href.length
+          && $href.is(':visible')
+          && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+      })
+      .sort(function (a, b) { return a[0] - b[0] })
+      .each(function () {
+        that.offsets.push(this[0])
+        that.targets.push(this[1])
+      })
+  }
+
+  ScrollSpy.prototype.process = function () {
+    var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+    var scrollHeight = this.getScrollHeight()
+    var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+    var offsets      = this.offsets
+    var targets      = this.targets
+    var activeTarget = this.activeTarget
+    var i
+
+    if (this.scrollHeight != scrollHeight) {
+      this.refresh()
+    }
+
+    if (scrollTop >= maxScroll) {
+      return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+    }
+
+    if (activeTarget && scrollTop < offsets[0]) {
+      this.activeTarget = null
+      return this.clear()
+    }
+
+    for (i = offsets.length; i--;) {
+      activeTarget != targets[i]
+        && scrollTop >= offsets[i]
+        && (offsets[i + 1] === undefined || scrollTop < offsets[i + 1])
+        && this.activate(targets[i])
+    }
+  }
+
+  ScrollSpy.prototype.activate = function (target) {
+    this.activeTarget = target
+
+    this.clear()
+
+    var selector = this.selector +
+      '[data-target="' + target + '"],' +
+      this.selector + '[href="' + target + '"]'
+
+    var active = $(selector)
+      .parents('li')
+      .addClass('active')
+
+    if (active.parent('.dropdown-menu').length) {
+      active = active
+        .closest('li.dropdown')
+        .addClass('active')
+    }
+
+    active.trigger('activate.bs.scrollspy')
+  }
+
+  ScrollSpy.prototype.clear = function () {
+    $(this.selector)
+      .parentsUntil(this.options.target, '.active')
+      .removeClass('active')
+  }
+
+
+  // SCROLLSPY PLUGIN DEFINITION
+  // ===========================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.scrollspy')
+      var options = typeof option == 'object' && option
+
+      if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.scrollspy
+
+  $.fn.scrollspy             = Plugin
+  $.fn.scrollspy.Constructor = ScrollSpy
+
+
+  // SCROLLSPY NO CONFLICT
+  // =====================
+
+  $.fn.scrollspy.noConflict = function () {
+    $.fn.scrollspy = old
+    return this
+  }
+
+
+  // SCROLLSPY DATA-API
+  // ==================
+
+  $(window).on('load.bs.scrollspy.data-api', function () {
+    $('[data-spy="scroll"]').each(function () {
+      var $spy = $(this)
+      Plugin.call($spy, $spy.data())
+    })
+  })
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: tab.js v3.3.7
+ * http://getbootstrap.com/javascript/#tabs
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // TAB CLASS DEFINITION
+  // ====================
+
+  var Tab = function (element) {
+    // jscs:disable requireDollarBeforejQueryAssignment
+    this.element = $(element)
+    // jscs:enable requireDollarBeforejQueryAssignment
+  }
+
+  Tab.VERSION = '3.3.7'
+
+  Tab.TRANSITION_DURATION = 150
+
+  Tab.prototype.show = function () {
+    var $this    = this.element
+    var $ul      = $this.closest('ul:not(.dropdown-menu)')
+    var selector = $this.data('target')
+
+    if (!selector) {
+      selector = $this.attr('href')
+      selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+    }
+
+    if ($this.parent('li').hasClass('active')) return
+
+    var $previous = $ul.find('.active:last a')
+    var hideEvent = $.Event('hide.bs.tab', {
+      relatedTarget: $this[0]
+    })
+    var showEvent = $.Event('show.bs.tab', {
+      relatedTarget: $previous[0]
+    })
+
+    $previous.trigger(hideEvent)
+    $this.trigger(showEvent)
+
+    if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
+
+    var $target = $(selector)
+
+    this.activate($this.closest('li'), $ul)
+    this.activate($target, $target.parent(), function () {
+      $previous.trigger({
+        type: 'hidden.bs.tab',
+        relatedTarget: $this[0]
+      })
+      $this.trigger({
+        type: 'shown.bs.tab',
+        relatedTarget: $previous[0]
+      })
+    })
+  }
+
+  Tab.prototype.activate = function (element, container, callback) {
+    var $active    = container.find('> .active')
+    var transition = callback
+      && $.support.transition
+      && ($active.length && $active.hasClass('fade') || !!container.find('> .fade').length)
+
+    function next() {
+      $active
+        .removeClass('active')
+        .find('> .dropdown-menu > .active')
+          .removeClass('active')
+        .end()
+        .find('[data-toggle="tab"]')
+          .attr('aria-expanded', false)
+
+      element
+        .addClass('active')
+        .find('[data-toggle="tab"]')
+          .attr('aria-expanded', true)
+
+      if (transition) {
+        element[0].offsetWidth // reflow for transition
+        element.addClass('in')
+      } else {
+        element.removeClass('fade')
+      }
+
+      if (element.parent('.dropdown-menu').length) {
+        element
+          .closest('li.dropdown')
+            .addClass('active')
+          .end()
+          .find('[data-toggle="tab"]')
+            .attr('aria-expanded', true)
+      }
+
+      callback && callback()
+    }
+
+    $active.length && transition ?
+      $active
+        .one('bsTransitionEnd', next)
+        .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
+      next()
+
+    $active.removeClass('in')
+  }
+
+
+  // TAB PLUGIN DEFINITION
+  // =====================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this = $(this)
+      var data  = $this.data('bs.tab')
+
+      if (!data) $this.data('bs.tab', (data = new Tab(this)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.tab
+
+  $.fn.tab             = Plugin
+  $.fn.tab.Constructor = Tab
+
+
+  // TAB NO CONFLICT
+  // ===============
+
+  $.fn.tab.noConflict = function () {
+    $.fn.tab = old
+    return this
+  }
+
+
+  // TAB DATA-API
+  // ============
+
+  var clickHandler = function (e) {
+    e.preventDefault()
+    Plugin.call($(this), 'show')
+  }
+
+  $(document)
+    .on('click.bs.tab.data-api', '[data-toggle="tab"]', clickHandler)
+    .on('click.bs.tab.data-api', '[data-toggle="pill"]', clickHandler)
+
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: affix.js v3.3.7
+ * http://getbootstrap.com/javascript/#affix
+ * ========================================================================
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * ======================================================================== */
+
+
++function ($) {
+  'use strict';
+
+  // AFFIX CLASS DEFINITION
+  // ======================
+
+  var Affix = function (element, options) {
+    this.options = $.extend({}, Affix.DEFAULTS, options)
+
+    this.$target = $(this.options.target)
+      .on('scroll.bs.affix.data-api', $.proxy(this.checkPosition, this))
+      .on('click.bs.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this))
+
+    this.$element     = $(element)
+    this.affixed      = null
+    this.unpin        = null
+    this.pinnedOffset = null
+
+    this.checkPosition()
+  }
+
+  Affix.VERSION  = '3.3.7'
+
+  Affix.RESET    = 'affix affix-top affix-bottom'
+
+  Affix.DEFAULTS = {
+    offset: 0,
+    target: window
+  }
+
+  Affix.prototype.getState = function (scrollHeight, height, offsetTop, offsetBottom) {
+    var scrollTop    = this.$target.scrollTop()
+    var position     = this.$element.offset()
+    var targetHeight = this.$target.height()
+
+    if (offsetTop != null && this.affixed == 'top') return scrollTop < offsetTop ? 'top' : false
+
+    if (this.affixed == 'bottom') {
+      if (offsetTop != null) return (scrollTop + this.unpin <= position.top) ? false : 'bottom'
+      return (scrollTop + targetHeight <= scrollHeight - offsetBottom) ? false : 'bottom'
+    }
+
+    var initializing   = this.affixed == null
+    var colliderTop    = initializing ? scrollTop : position.top
+    var colliderHeight = initializing ? targetHeight : height
+
+    if (offsetTop != null && scrollTop <= offsetTop) return 'top'
+    if (offsetBottom != null && (colliderTop + colliderHeight >= scrollHeight - offsetBottom)) return 'bottom'
+
+    return false
+  }
+
+  Affix.prototype.getPinnedOffset = function () {
+    if (this.pinnedOffset) return this.pinnedOffset
+    this.$element.removeClass(Affix.RESET).addClass('affix')
+    var scrollTop = this.$target.scrollTop()
+    var position  = this.$element.offset()
+    return (this.pinnedOffset = position.top - scrollTop)
+  }
+
+  Affix.prototype.checkPositionWithEventLoop = function () {
+    setTimeout($.proxy(this.checkPosition, this), 1)
+  }
+
+  Affix.prototype.checkPosition = function () {
+    if (!this.$element.is(':visible')) return
+
+    var height       = this.$element.height()
+    var offset       = this.options.offset
+    var offsetTop    = offset.top
+    var offsetBottom = offset.bottom
+    var scrollHeight = Math.max($(document).height(), $(document.body).height())
+
+    if (typeof offset != 'object')         offsetBottom = offsetTop = offset
+    if (typeof offsetTop == 'function')    offsetTop    = offset.top(this.$element)
+    if (typeof offsetBottom == 'function') offsetBottom = offset.bottom(this.$element)
+
+    var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom)
+
+    if (this.affixed != affix) {
+      if (this.unpin != null) this.$element.css('top', '')
+
+      var affixType = 'affix' + (affix ? '-' + affix : '')
+      var e         = $.Event(affixType + '.bs.affix')
+
+      this.$element.trigger(e)
+
+      if (e.isDefaultPrevented()) return
+
+      this.affixed = affix
+      this.unpin = affix == 'bottom' ? this.getPinnedOffset() : null
+
+      this.$element
+        .removeClass(Affix.RESET)
+        .addClass(affixType)
+        .trigger(affixType.replace('affix', 'affixed') + '.bs.affix')
+    }
+
+    if (affix == 'bottom') {
+      this.$element.offset({
+        top: scrollHeight - height - offsetBottom
+      })
+    }
+  }
+
+
+  // AFFIX PLUGIN DEFINITION
+  // =======================
+
+  function Plugin(option) {
+    return this.each(function () {
+      var $this   = $(this)
+      var data    = $this.data('bs.affix')
+      var options = typeof option == 'object' && option
+
+      if (!data) $this.data('bs.affix', (data = new Affix(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  var old = $.fn.affix
+
+  $.fn.affix             = Plugin
+  $.fn.affix.Constructor = Affix
+
+
+  // AFFIX NO CONFLICT
+  // =================
+
+  $.fn.affix.noConflict = function () {
+    $.fn.affix = old
+    return this
+  }
+
+
+  // AFFIX DATA-API
+  // ==============
+
+  $(window).on('load', function () {
+    $('[data-spy="affix"]').each(function () {
+      var $spy = $(this)
+      var data = $spy.data()
+
+      data.offset = data.offset || {}
+
+      if (data.offsetBottom != null) data.offset.bottom = data.offsetBottom
+      if (data.offsetTop    != null) data.offset.top    = data.offsetTop
+
+      Plugin.call($spy, data)
+    })
+  })
+
+}(jQuery);
+
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(36);
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(15);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(35);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
 module.exports = {
-  XmlEntities: __webpack_require__(17),
-  Html4Entities: __webpack_require__(16),
+  XmlEntities: __webpack_require__(18),
+  Html4Entities: __webpack_require__(17),
   Html5Entities: __webpack_require__(3),
   AllHtmlEntities: __webpack_require__(3)
 };
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 var HTML_ALPHA = ['apos', 'nbsp', 'iexcl', 'cent', 'pound', 'curren', 'yen', 'brvbar', 'sect', 'uml', 'copy', 'ordf', 'laquo', 'not', 'shy', 'reg', 'macr', 'deg', 'plusmn', 'sup2', 'sup3', 'acute', 'micro', 'para', 'middot', 'cedil', 'sup1', 'ordm', 'raquo', 'frac14', 'frac12', 'frac34', 'iquest', 'Agrave', 'Aacute', 'Acirc', 'Atilde', 'Auml', 'Aring', 'Aelig', 'Ccedil', 'Egrave', 'Eacute', 'Ecirc', 'Euml', 'Igrave', 'Iacute', 'Icirc', 'Iuml', 'ETH', 'Ntilde', 'Ograve', 'Oacute', 'Ocirc', 'Otilde', 'Ouml', 'times', 'Oslash', 'Ugrave', 'Uacute', 'Ucirc', 'Uuml', 'Yacute', 'THORN', 'szlig', 'agrave', 'aacute', 'acirc', 'atilde', 'auml', 'aring', 'aelig', 'ccedil', 'egrave', 'eacute', 'ecirc', 'euml', 'igrave', 'iacute', 'icirc', 'iuml', 'eth', 'ntilde', 'ograve', 'oacute', 'ocirc', 'otilde', 'ouml', 'divide', 'oslash', 'ugrave', 'uacute', 'ucirc', 'uuml', 'yacute', 'thorn', 'yuml', 'quot', 'amp', 'lt', 'gt', 'OElig', 'oelig', 'Scaron', 'scaron', 'Yuml', 'circ', 'tilde', 'ensp', 'emsp', 'thinsp', 'zwnj', 'zwj', 'lrm', 'rlm', 'ndash', 'mdash', 'lsquo', 'rsquo', 'sbquo', 'ldquo', 'rdquo', 'bdquo', 'dagger', 'Dagger', 'permil', 'lsaquo', 'rsaquo', 'euro', 'fnof', 'Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', 'Omega', 'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigmaf', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'thetasym', 'upsih', 'piv', 'bull', 'hellip', 'prime', 'Prime', 'oline', 'frasl', 'weierp', 'image', 'real', 'trade', 'alefsym', 'larr', 'uarr', 'rarr', 'darr', 'harr', 'crarr', 'lArr', 'uArr', 'rArr', 'dArr', 'hArr', 'forall', 'part', 'exist', 'empty', 'nabla', 'isin', 'notin', 'ni', 'prod', 'sum', 'minus', 'lowast', 'radic', 'prop', 'infin', 'ang', 'and', 'or', 'cap', 'cup', 'int', 'there4', 'sim', 'cong', 'asymp', 'ne', 'equiv', 'le', 'ge', 'sub', 'sup', 'nsub', 'sube', 'supe', 'oplus', 'otimes', 'perp', 'sdot', 'lceil', 'rceil', 'lfloor', 'rfloor', 'lang', 'rang', 'loz', 'spades', 'clubs', 'hearts', 'diams'];
@@ -1736,7 +4131,7 @@ module.exports = Html4Entities;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 var ALPHA_INDEX = {
@@ -1897,31 +4292,31 @@ module.exports = XmlEntities;
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports) {
 
 module.exports = "<nav class=\"navbar navbar-inverse navbar-fixed-top\">\r\n    <div class=\"container\">\r\n        <nav-bar></nav-bar>\r\n    </div>\r\n</nav>\r\n\r\n<br />\r\n\r\n<div class=\"container\">\r\n\r\n    <div class=\"jumbotron\">\r\n\r\n        <router-outlet></router-outlet>\r\n    </div>\r\n\r\n</div>\r\n\r\n";
 
 /***/ }),
-/* 19 */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>in progress ...</h1>";
-
-/***/ }),
 /* 20 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navbar-header\">\r\n    <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n    </button>\r\n    <a class=\"navbar-brand\" href=\"#\">Angular4-Asp.NetCore</a>\r\n</div>\r\n<div id=\"navbar\" class=\"navbar-collapse collapse\" aria-expanded=\"false\" style=\"height: 1px;\">\r\n    <ul class=\"nav navbar-nav\">\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">Kendo</a></li>\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">ng2-material</a></li>\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">ASP.NET Core SignalR</a></li>\r\n    </ul>\r\n</div><!--/.nav-collapse -->";
+module.exports = "<h1>{{title}}</h1>\r\n\r\n<button kendoButton (click)=\"onButtonClick()\" [primary]=\"true\">My Kendo UI Button</button>";
 
 /***/ }),
 /* 21 */
 /***/ (function(module, exports) {
 
-module.exports = "404: Not Found";
+module.exports = "<div class=\"navbar-header\">\r\n    <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n    </button>\r\n    <a class=\"navbar-brand\" href=\"#\">Angular4-Asp.NetCore</a>\r\n</div>\r\n<div id=\"navbar\" class=\"navbar-collapse collapse\" aria-expanded=\"false\" style=\"height: 1px;\">\r\n    <ul class=\"nav navbar-nav\">\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">Kendo</a></li>\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">ng2-material</a></li>\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">ASP.NET Core SignalR</a></li>\r\n    </ul>\r\n</div><!--/.nav-collapse -->";
 
 /***/ }),
 /* 22 */
+/***/ (function(module, exports) {
+
+module.exports = "404: Not Found";
+
+/***/ }),
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2012,7 +4407,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2104,18 +4499,18 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(22);
-exports.encode = exports.stringify = __webpack_require__(23);
+exports.decode = exports.parse = __webpack_require__(23);
+exports.encode = exports.stringify = __webpack_require__(24);
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {/*! *****************************************************************************
@@ -3243,10 +5638,10 @@ var Reflect;
             Function("return this;")());
 })(Reflect || (Reflect = {}));
 //# sourceMappingURL=Reflect.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31), __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32), __webpack_require__(2)))
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*eslint-env browser*/
@@ -3290,7 +5685,7 @@ var colors = {
 };
 ansiHTML.setColors(colors);
 
-var Entities = __webpack_require__(15).AllHtmlEntities;
+var Entities = __webpack_require__(16).AllHtmlEntities;
 var entities = new Entities();
 
 exports.showProblems =
@@ -3331,7 +5726,7 @@ function problemType (type) {
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3342,12 +5737,12 @@ module.exports = function () {
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ansiRegex = __webpack_require__(27)();
+var ansiRegex = __webpack_require__(28)();
 
 module.exports = function (str) {
 	return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
@@ -3355,7 +5750,7 @@ module.exports = function (str) {
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -3493,7 +5888,7 @@ module.exports = function(hash, moduleMap, options) {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -3521,46 +5916,40 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(0))(11);
-
-/***/ }),
 /* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(38);
+module.exports = (__webpack_require__(0))(25);
 
 /***/ }),
 /* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(39);
+module.exports = (__webpack_require__(0))(77);
 
 /***/ }),
 /* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(4);
+module.exports = (__webpack_require__(0))(78);
 
 /***/ }),
 /* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(40);
+module.exports = (__webpack_require__(0))(85);
 
 /***/ }),
 /* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(46);
+module.exports = (__webpack_require__(0))(86);
 
 /***/ }),
 /* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(47);
+module.exports = (__webpack_require__(0))(9);
 
 /***/ }),
 /* 38 */
@@ -3570,6 +5959,3048 @@ __webpack_require__(6);
 __webpack_require__(5);
 module.exports = __webpack_require__(4);
 
+
+/***/ }),
+/* 39 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return AnimationDriver; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnimationEngine; });
+/* unused harmony export ɵAnimation */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return AnimationStyleNormalizer; });
+/* unused harmony export ɵNoopAnimationStyleNormalizer */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return WebAnimationsStyleNormalizer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return NoopAnimationDriver; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DomAnimationEngine; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return NoopAnimationEngine; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return WebAnimationsDriver; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return supportsWebAnimations; });
+/* unused harmony export ɵWebAnimationsPlayer */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(41);
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+/**
+ * @license Angular v4.1.2
+ * (c) 2010-2017 Google, Inc. https://angular.io/
+ * License: MIT
+ */
+
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @experimental
+ */
+var NoopAnimationDriver = (function () {
+    function NoopAnimationDriver() {
+    }
+    NoopAnimationDriver.prototype.animate = function (element, keyframes, duration, delay, easing, previousPlayers) {
+        if (previousPlayers === void 0) { previousPlayers = []; }
+        return new __WEBPACK_IMPORTED_MODULE_0__angular_animations__["NoopAnimationPlayer"]();
+    };
+    return NoopAnimationDriver;
+}());
+/**
+ * @experimental
+ */
+var AnimationDriver = (function () {
+    function AnimationDriver() {
+    }
+    return AnimationDriver;
+}());
+AnimationDriver.NOOP = new NoopAnimationDriver();
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @abstract
+ */
+var AnimationEngine = (function () {
+    function AnimationEngine() {
+    }
+    /**
+     * @abstract
+     * @param {?} trigger
+     * @param {?=} name
+     * @return {?}
+     */
+    AnimationEngine.prototype.registerTrigger = function (trigger, name) { };
+    /**
+     * @abstract
+     * @param {?} element
+     * @param {?} domFn
+     * @return {?}
+     */
+    AnimationEngine.prototype.onInsert = function (element, domFn) { };
+    /**
+     * @abstract
+     * @param {?} element
+     * @param {?} domFn
+     * @return {?}
+     */
+    AnimationEngine.prototype.onRemove = function (element, domFn) { };
+    /**
+     * @abstract
+     * @param {?} element
+     * @param {?} property
+     * @param {?} value
+     * @return {?}
+     */
+    AnimationEngine.prototype.setProperty = function (element, property, value) { };
+    /**
+     * @abstract
+     * @param {?} element
+     * @param {?} eventName
+     * @param {?} eventPhase
+     * @param {?} callback
+     * @return {?}
+     */
+    AnimationEngine.prototype.listen = function (element, eventName, eventPhase, callback) { };
+    /**
+     * @abstract
+     * @return {?}
+     */
+    AnimationEngine.prototype.flush = function () { };
+    Object.defineProperty(AnimationEngine.prototype, "activePlayers", {
+        /**
+         * @return {?}
+         */
+        get: function () { throw new Error('...'); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AnimationEngine.prototype, "queuedPlayers", {
+        /**
+         * @return {?}
+         */
+        get: function () { throw new Error('...'); },
+        enumerable: true,
+        configurable: true
+    });
+    return AnimationEngine;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var ONE_SECOND = 1000;
+/**
+ * @param {?} exp
+ * @param {?} errors
+ * @return {?}
+ */
+function parseTimeExpression(exp, errors) {
+    var /** @type {?} */ regex = /^([\.\d]+)(m?s)(?:\s+([\.\d]+)(m?s))?(?:\s+([-a-z]+(?:\(.+?\))?))?$/i;
+    var /** @type {?} */ duration;
+    var /** @type {?} */ delay = 0;
+    var /** @type {?} */ easing = null;
+    if (typeof exp === 'string') {
+        var /** @type {?} */ matches = exp.match(regex);
+        if (matches === null) {
+            errors.push("The provided timing value \"" + exp + "\" is invalid.");
+            return { duration: 0, delay: 0, easing: null };
+        }
+        var /** @type {?} */ durationMatch = parseFloat(matches[1]);
+        var /** @type {?} */ durationUnit = matches[2];
+        if (durationUnit == 's') {
+            durationMatch *= ONE_SECOND;
+        }
+        duration = Math.floor(durationMatch);
+        var /** @type {?} */ delayMatch = matches[3];
+        var /** @type {?} */ delayUnit = matches[4];
+        if (delayMatch != null) {
+            var /** @type {?} */ delayVal = parseFloat(delayMatch);
+            if (delayUnit != null && delayUnit == 's') {
+                delayVal *= ONE_SECOND;
+            }
+            delay = Math.floor(delayVal);
+        }
+        var /** @type {?} */ easingVal = matches[5];
+        if (easingVal) {
+            easing = easingVal;
+        }
+    }
+    else {
+        duration = (exp);
+    }
+    return { duration: duration, delay: delay, easing: easing };
+}
+/**
+ * @param {?} styles
+ * @return {?}
+ */
+function normalizeStyles(styles) {
+    var /** @type {?} */ normalizedStyles = {};
+    if (Array.isArray(styles)) {
+        styles.forEach(function (data) { return copyStyles(data, false, normalizedStyles); });
+    }
+    else {
+        copyStyles(styles, false, normalizedStyles);
+    }
+    return normalizedStyles;
+}
+/**
+ * @param {?} styles
+ * @param {?} readPrototype
+ * @param {?=} destination
+ * @return {?}
+ */
+function copyStyles(styles, readPrototype, destination) {
+    if (destination === void 0) { destination = {}; }
+    if (readPrototype) {
+        // we make use of a for-in loop so that the
+        // prototypically inherited properties are
+        // revealed from the backFill map
+        for (var /** @type {?} */ prop in styles) {
+            destination[prop] = styles[prop];
+        }
+    }
+    else {
+        Object.keys(styles).forEach(function (prop) { return destination[prop] = styles[prop]; });
+    }
+    return destination;
+}
+/**
+ * @param {?} element
+ * @param {?} styles
+ * @return {?}
+ */
+function setStyles(element, styles) {
+    if (element['style']) {
+        Object.keys(styles).forEach(function (prop) { return element.style[prop] = styles[prop]; });
+    }
+}
+/**
+ * @param {?} element
+ * @param {?} styles
+ * @return {?}
+ */
+function eraseStyles(element, styles) {
+    if (element['style']) {
+        Object.keys(styles).forEach(function (prop) {
+            // IE requires '' instead of null
+            // see https://github.com/angular/angular/issues/7916
+            element.style[prop] = '';
+        });
+    }
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @param {?} visitor
+ * @param {?} node
+ * @param {?} context
+ * @return {?}
+ */
+function visitAnimationNode(visitor, node, context) {
+    switch (node.type) {
+        case 0 /* State */:
+            return visitor.visitState(/** @type {?} */ (node), context);
+        case 1 /* Transition */:
+            return visitor.visitTransition(/** @type {?} */ (node), context);
+        case 2 /* Sequence */:
+            return visitor.visitSequence(/** @type {?} */ (node), context);
+        case 3 /* Group */:
+            return visitor.visitGroup(/** @type {?} */ (node), context);
+        case 4 /* Animate */:
+            return visitor.visitAnimate(/** @type {?} */ (node), context);
+        case 5 /* KeyframeSequence */:
+            return visitor.visitKeyframeSequence(/** @type {?} */ (node), context);
+        case 6 /* Style */:
+            return visitor.visitStyle(/** @type {?} */ (node), context);
+        default:
+            throw new Error("Unable to resolve animation metadata node #" + node.type);
+    }
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var ANY_STATE = '*';
+/**
+ * @param {?} transitionValue
+ * @param {?} errors
+ * @return {?}
+ */
+function parseTransitionExpr(transitionValue, errors) {
+    var /** @type {?} */ expressions = [];
+    if (typeof transitionValue == 'string') {
+        ((transitionValue))
+            .split(/\s*,\s*/)
+            .forEach(function (str) { return parseInnerTransitionStr(str, expressions, errors); });
+    }
+    else {
+        expressions.push(/** @type {?} */ (transitionValue));
+    }
+    return expressions;
+}
+/**
+ * @param {?} eventStr
+ * @param {?} expressions
+ * @param {?} errors
+ * @return {?}
+ */
+function parseInnerTransitionStr(eventStr, expressions, errors) {
+    if (eventStr[0] == ':') {
+        eventStr = parseAnimationAlias(eventStr, errors);
+    }
+    var /** @type {?} */ match = eventStr.match(/^(\*|[-\w]+)\s*(<?[=-]>)\s*(\*|[-\w]+)$/);
+    if (match == null || match.length < 4) {
+        errors.push("The provided transition expression \"" + eventStr + "\" is not supported");
+        return expressions;
+    }
+    var /** @type {?} */ fromState = match[1];
+    var /** @type {?} */ separator = match[2];
+    var /** @type {?} */ toState = match[3];
+    expressions.push(makeLambdaFromStates(fromState, toState));
+    var /** @type {?} */ isFullAnyStateExpr = fromState == ANY_STATE && toState == ANY_STATE;
+    if (separator[0] == '<' && !isFullAnyStateExpr) {
+        expressions.push(makeLambdaFromStates(toState, fromState));
+    }
+}
+/**
+ * @param {?} alias
+ * @param {?} errors
+ * @return {?}
+ */
+function parseAnimationAlias(alias, errors) {
+    switch (alias) {
+        case ':enter':
+            return 'void => *';
+        case ':leave':
+            return '* => void';
+        default:
+            errors.push("The transition alias value \"" + alias + "\" is not supported");
+            return '* => *';
+    }
+}
+/**
+ * @param {?} lhs
+ * @param {?} rhs
+ * @return {?}
+ */
+function makeLambdaFromStates(lhs, rhs) {
+    return function (fromState, toState) {
+        var /** @type {?} */ lhsMatch = lhs == ANY_STATE || lhs == fromState;
+        var /** @type {?} */ rhsMatch = rhs == ANY_STATE || rhs == toState;
+        return lhsMatch && rhsMatch;
+    };
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @param {?} keyframes
+ * @param {?} duration
+ * @param {?} delay
+ * @param {?} easing
+ * @return {?}
+ */
+function createTimelineInstruction(keyframes, duration, delay, easing) {
+    return {
+        type: 1 /* TimelineAnimation */,
+        keyframes: keyframes,
+        duration: duration,
+        delay: delay,
+        totalTime: duration + delay, easing: easing
+    };
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @param {?} ast
+ * @param {?=} startingStyles
+ * @param {?=} finalStyles
+ * @return {?}
+ */
+function buildAnimationKeyframes(ast, startingStyles, finalStyles) {
+    if (startingStyles === void 0) { startingStyles = {}; }
+    if (finalStyles === void 0) { finalStyles = {}; }
+    var /** @type {?} */ normalizedAst = Array.isArray(ast) ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["sequence"])(/** @type {?} */ (ast)) : (ast);
+    return new AnimationTimelineVisitor().buildKeyframes(normalizedAst, startingStyles, finalStyles);
+}
+var AnimationTimelineContext = (function () {
+    /**
+     * @param {?} errors
+     * @param {?} timelines
+     * @param {?=} initialTimeline
+     */
+    function AnimationTimelineContext(errors, timelines, initialTimeline) {
+        this.errors = errors;
+        this.timelines = timelines;
+        this.previousNode = ({});
+        this.subContextCount = 0;
+        this.currentTimeline = initialTimeline || new TimelineBuilder(0);
+        timelines.push(this.currentTimeline);
+    }
+    /**
+     * @return {?}
+     */
+    AnimationTimelineContext.prototype.createSubContext = function () {
+        var /** @type {?} */ context = new AnimationTimelineContext(this.errors, this.timelines, this.currentTimeline.fork());
+        context.previousNode = this.previousNode;
+        context.currentAnimateTimings = this.currentAnimateTimings;
+        this.subContextCount++;
+        return context;
+    };
+    /**
+     * @param {?=} newTime
+     * @return {?}
+     */
+    AnimationTimelineContext.prototype.transformIntoNewTimeline = function (newTime) {
+        if (newTime === void 0) { newTime = 0; }
+        this.currentTimeline = this.currentTimeline.fork(newTime);
+        this.timelines.push(this.currentTimeline);
+        return this.currentTimeline;
+    };
+    /**
+     * @param {?} time
+     * @return {?}
+     */
+    AnimationTimelineContext.prototype.incrementTime = function (time) {
+        this.currentTimeline.forwardTime(this.currentTimeline.duration + time);
+    };
+    return AnimationTimelineContext;
+}());
+var AnimationTimelineVisitor = (function () {
+    function AnimationTimelineVisitor() {
+    }
+    /**
+     * @param {?} ast
+     * @param {?} startingStyles
+     * @param {?} finalStyles
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.buildKeyframes = function (ast, startingStyles, finalStyles) {
+        var /** @type {?} */ context = new AnimationTimelineContext([], []);
+        context.currentTimeline.setStyles(startingStyles);
+        visitAnimationNode(this, ast, context);
+        // this checks to see if an actual animation happened
+        var /** @type {?} */ timelines = context.timelines.filter(function (timeline) { return timeline.hasStyling(); });
+        if (timelines.length && Object.keys(finalStyles).length) {
+            var /** @type {?} */ tl = timelines[timelines.length - 1];
+            if (!tl.allowOnlyTimelineStyles()) {
+                tl.setStyles(finalStyles);
+            }
+        }
+        return timelines.length ? timelines.map(function (timeline) { return timeline.buildKeyframes(); }) :
+            [createTimelineInstruction([], 0, 0, '')];
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitState = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitTransition = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitSequence = function (ast, context) {
+        var _this = this;
+        var /** @type {?} */ subContextCount = context.subContextCount;
+        if (context.previousNode.type == 6 /* Style */) {
+            context.currentTimeline.forwardFrame();
+            context.currentTimeline.snapshotCurrentStyles();
+        }
+        ast.steps.forEach(function (s) { return visitAnimationNode(_this, s, context); });
+        // this means that some animation function within the sequence
+        // ended up creating a sub timeline (which means the current
+        // timeline cannot overlap with the contents of the sequence)
+        if (context.subContextCount > subContextCount) {
+            context.transformIntoNewTimeline();
+        }
+        context.previousNode = ast;
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitGroup = function (ast, context) {
+        var _this = this;
+        var /** @type {?} */ innerTimelines = [];
+        var /** @type {?} */ furthestTime = context.currentTimeline.currentTime;
+        ast.steps.forEach(function (s) {
+            var /** @type {?} */ innerContext = context.createSubContext();
+            visitAnimationNode(_this, s, innerContext);
+            furthestTime = Math.max(furthestTime, innerContext.currentTimeline.currentTime);
+            innerTimelines.push(innerContext.currentTimeline);
+        });
+        // this operation is run after the AST loop because otherwise
+        // if the parent timeline's collected styles were updated then
+        // it would pass in invalid data into the new-to-be forked items
+        innerTimelines.forEach(function (timeline) { return context.currentTimeline.mergeTimelineCollectedStyles(timeline); });
+        context.transformIntoNewTimeline(furthestTime);
+        context.previousNode = ast;
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitAnimate = function (ast, context) {
+        var /** @type {?} */ timings = ast.timings.hasOwnProperty('duration') ? (ast.timings) :
+            parseTimeExpression(/** @type {?} */ (ast.timings), context.errors);
+        context.currentAnimateTimings = timings;
+        if (timings.delay) {
+            context.incrementTime(timings.delay);
+            context.currentTimeline.snapshotCurrentStyles();
+        }
+        var /** @type {?} */ astType = ast.styles ? ast.styles.type : -1;
+        if (astType == 5 /* KeyframeSequence */) {
+            this.visitKeyframeSequence(/** @type {?} */ (ast.styles), context);
+        }
+        else {
+            var /** @type {?} */ styleAst = (ast.styles);
+            if (!styleAst) {
+                var /** @type {?} */ newStyleData = {};
+                if (timings.easing) {
+                    newStyleData['easing'] = timings.easing;
+                }
+                styleAst = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["style"])(newStyleData);
+                ((styleAst))['treatAsEmptyStep'] = true;
+            }
+            context.incrementTime(timings.duration);
+            if (styleAst) {
+                this.visitStyle(styleAst, context);
+            }
+        }
+        context.currentAnimateTimings = null;
+        context.previousNode = ast;
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitStyle = function (ast, context) {
+        // this is a special case when a style() call is issued directly after
+        // a call to animate(). If the clock is not forwarded by one frame then
+        // the style() calls will be merged into the previous animate() call
+        // which is incorrect.
+        if (!context.currentAnimateTimings &&
+            context.previousNode.type == 4 /* Animate */) {
+            context.currentTimeline.forwardFrame();
+        }
+        var /** @type {?} */ normalizedStyles = normalizeStyles(ast.styles);
+        var /** @type {?} */ easing = context.currentAnimateTimings && context.currentAnimateTimings.easing;
+        this._applyStyles(normalizedStyles, easing, ((ast))['treatAsEmptyStep'] ? true : false, context);
+        context.previousNode = ast;
+    };
+    /**
+     * @param {?} styles
+     * @param {?} easing
+     * @param {?} treatAsEmptyStep
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype._applyStyles = function (styles, easing, treatAsEmptyStep, context) {
+        if (styles.hasOwnProperty('easing')) {
+            easing = easing || (styles['easing']);
+            delete styles['easing'];
+        }
+        context.currentTimeline.setStyles(styles, easing, treatAsEmptyStep);
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitKeyframeSequence = function (ast, context) {
+        var _this = this;
+        var /** @type {?} */ MAX_KEYFRAME_OFFSET = 1;
+        var /** @type {?} */ limit = ast.steps.length - 1;
+        var /** @type {?} */ firstKeyframe = ast.steps[0];
+        var /** @type {?} */ offsetGap = 0;
+        var /** @type {?} */ containsOffsets = getOffset(firstKeyframe) != null;
+        if (!containsOffsets) {
+            offsetGap = MAX_KEYFRAME_OFFSET / limit;
+        }
+        var /** @type {?} */ startTime = context.currentTimeline.duration;
+        var /** @type {?} */ duration = ((context.currentAnimateTimings)).duration;
+        var /** @type {?} */ innerContext = context.createSubContext();
+        var /** @type {?} */ innerTimeline = innerContext.currentTimeline;
+        innerTimeline.easing = ((context.currentAnimateTimings)).easing;
+        ast.steps.forEach(function (step, i) {
+            var /** @type {?} */ normalizedStyles = normalizeStyles(step.styles);
+            var /** @type {?} */ offset = containsOffsets ?
+                (step.offset != null ? step.offset : parseFloat(/** @type {?} */ (normalizedStyles['offset']))) :
+                (i == limit ? MAX_KEYFRAME_OFFSET : i * offsetGap);
+            innerTimeline.forwardTime(offset * duration);
+            _this._applyStyles(normalizedStyles, null, false, innerContext);
+        });
+        // this will ensure that the parent timeline gets all the styles from
+        // the child even if the new timeline below is not used
+        context.currentTimeline.mergeTimelineCollectedStyles(innerTimeline);
+        // we do this because the window between this timeline and the sub timeline
+        // should ensure that the styles within are exactly the same as they were before
+        context.transformIntoNewTimeline(startTime + duration);
+        context.previousNode = ast;
+    };
+    return AnimationTimelineVisitor;
+}());
+var TimelineBuilder = (function () {
+    /**
+     * @param {?} startTime
+     * @param {?=} globalTimelineStyles
+     */
+    function TimelineBuilder(startTime, globalTimelineStyles) {
+        this.startTime = startTime;
+        this.duration = 0;
+        this.easing = '';
+        this._previousKeyframe = {};
+        this._keyframes = new Map();
+        this._styleSummary = {};
+        this._backFill = {};
+        this._currentEmptyStepKeyframe = null;
+        this._localTimelineStyles = Object.create(this._backFill, {});
+        this._globalTimelineStyles =
+            globalTimelineStyles ? globalTimelineStyles : this._localTimelineStyles;
+        this._loadKeyframe();
+    }
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype.hasStyling = function () { return this._keyframes.size > 1; };
+    Object.defineProperty(TimelineBuilder.prototype, "currentTime", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.startTime + this.duration; },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @param {?=} currentTime
+     * @return {?}
+     */
+    TimelineBuilder.prototype.fork = function (currentTime) {
+        if (currentTime === void 0) { currentTime = 0; }
+        return new TimelineBuilder(currentTime || this.currentTime, this._globalTimelineStyles);
+    };
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype._loadKeyframe = function () {
+        if (this._currentKeyframe) {
+            this._previousKeyframe = this._currentKeyframe;
+        }
+        this._currentKeyframe = ((this._keyframes.get(this.duration)));
+        if (!this._currentKeyframe) {
+            this._currentKeyframe = Object.create(this._backFill, {});
+            this._keyframes.set(this.duration, this._currentKeyframe);
+        }
+    };
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype.forwardFrame = function () {
+        this.duration++;
+        this._loadKeyframe();
+    };
+    /**
+     * @param {?} time
+     * @return {?}
+     */
+    TimelineBuilder.prototype.forwardTime = function (time) {
+        this.duration = time;
+        this._loadKeyframe();
+    };
+    /**
+     * @param {?} prop
+     * @param {?} value
+     * @return {?}
+     */
+    TimelineBuilder.prototype._updateStyle = function (prop, value) {
+        this._localTimelineStyles[prop] = value; /** @type {?} */
+        ((this._globalTimelineStyles))[prop] = value;
+        this._styleSummary[prop] = { time: this.currentTime, value: value };
+    };
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype.allowOnlyTimelineStyles = function () { return this._currentEmptyStepKeyframe !== this._currentKeyframe; };
+    /**
+     * @param {?} styles
+     * @param {?=} easing
+     * @param {?=} treatAsEmptyStep
+     * @return {?}
+     */
+    TimelineBuilder.prototype.setStyles = function (styles, easing, treatAsEmptyStep) {
+        var _this = this;
+        if (easing === void 0) { easing = null; }
+        if (treatAsEmptyStep === void 0) { treatAsEmptyStep = false; }
+        if (easing) {
+            ((this._previousKeyframe))['easing'] = easing;
+        }
+        if (treatAsEmptyStep) {
+            // special case for animate(duration):
+            // all missing styles are filled with a `*` value then
+            // if any destination styles are filled in later on the same
+            // keyframe then they will override the overridden styles
+            // We use `_globalTimelineStyles` here because there may be
+            // styles in previous keyframes that are not present in this timeline
+            Object.keys(this._globalTimelineStyles).forEach(function (prop) {
+                _this._backFill[prop] = _this._globalTimelineStyles[prop] || __WEBPACK_IMPORTED_MODULE_0__angular_animations__["AUTO_STYLE"];
+                _this._currentKeyframe[prop] = __WEBPACK_IMPORTED_MODULE_0__angular_animations__["AUTO_STYLE"];
+            });
+            this._currentEmptyStepKeyframe = this._currentKeyframe;
+        }
+        else {
+            Object.keys(styles).forEach(function (prop) {
+                if (prop !== 'offset') {
+                    var /** @type {?} */ val = styles[prop];
+                    _this._currentKeyframe[prop] = val;
+                    if (!_this._localTimelineStyles[prop]) {
+                        _this._backFill[prop] = _this._globalTimelineStyles[prop] || __WEBPACK_IMPORTED_MODULE_0__angular_animations__["AUTO_STYLE"];
+                    }
+                    _this._updateStyle(prop, val);
+                }
+            });
+            Object.keys(this._localTimelineStyles).forEach(function (prop) {
+                if (!_this._currentKeyframe.hasOwnProperty(prop)) {
+                    _this._currentKeyframe[prop] = _this._localTimelineStyles[prop];
+                }
+            });
+        }
+    };
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype.snapshotCurrentStyles = function () { copyStyles(this._localTimelineStyles, false, this._currentKeyframe); };
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype.getFinalKeyframe = function () { return ((this._keyframes.get(this.duration))); };
+    Object.defineProperty(TimelineBuilder.prototype, "properties", {
+        /**
+         * @return {?}
+         */
+        get: function () {
+            var /** @type {?} */ properties = [];
+            for (var /** @type {?} */ prop in this._currentKeyframe) {
+                properties.push(prop);
+            }
+            return properties;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @param {?} timeline
+     * @return {?}
+     */
+    TimelineBuilder.prototype.mergeTimelineCollectedStyles = function (timeline) {
+        var _this = this;
+        Object.keys(timeline._styleSummary).forEach(function (prop) {
+            var /** @type {?} */ details0 = _this._styleSummary[prop];
+            var /** @type {?} */ details1 = timeline._styleSummary[prop];
+            if (!details0 || details1.time > details0.time) {
+                _this._updateStyle(prop, details1.value);
+            }
+        });
+    };
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype.buildKeyframes = function () {
+        var _this = this;
+        var /** @type {?} */ finalKeyframes = [];
+        // special case for when there are only start/destination
+        // styles but no actual animation animate steps...
+        if (this.duration == 0) {
+            var /** @type {?} */ targetKeyframe = this.getFinalKeyframe();
+            var /** @type {?} */ firstKeyframe = copyStyles(targetKeyframe, true);
+            firstKeyframe['offset'] = 0;
+            finalKeyframes.push(firstKeyframe);
+            var /** @type {?} */ lastKeyframe = copyStyles(targetKeyframe, true);
+            lastKeyframe['offset'] = 1;
+            finalKeyframes.push(lastKeyframe);
+        }
+        else {
+            this._keyframes.forEach(function (keyframe, time) {
+                var /** @type {?} */ finalKeyframe = copyStyles(keyframe, true);
+                finalKeyframe['offset'] = time / _this.duration;
+                finalKeyframes.push(finalKeyframe);
+            });
+        }
+        return createTimelineInstruction(finalKeyframes, this.duration, this.startTime, this.easing);
+    };
+    return TimelineBuilder;
+}());
+/**
+ * @param {?} ast
+ * @return {?}
+ */
+function getOffset(ast) {
+    var /** @type {?} */ offset = ast.offset;
+    if (offset == null) {
+        var /** @type {?} */ styles = ast.styles;
+        if (Array.isArray(styles)) {
+            for (var /** @type {?} */ i = 0; i < styles.length; i++) {
+                var /** @type {?} */ o = (styles[i]['offset']);
+                if (o != null) {
+                    offset = o;
+                    break;
+                }
+            }
+        }
+        else {
+            offset = (styles['offset']);
+        }
+    }
+    return ((offset));
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @param {?} triggerName
+ * @param {?} fromState
+ * @param {?} toState
+ * @param {?} isRemovalTransition
+ * @param {?} fromStyles
+ * @param {?} toStyles
+ * @param {?} timelines
+ * @return {?}
+ */
+function createTransitionInstruction(triggerName, fromState, toState, isRemovalTransition, fromStyles, toStyles, timelines) {
+    return {
+        type: 0 /* TransitionAnimation */,
+        triggerName: triggerName,
+        isRemovalTransition: isRemovalTransition,
+        fromState: fromState,
+        fromStyles: fromStyles,
+        toState: toState,
+        toStyles: toStyles,
+        timelines: timelines
+    };
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var AnimationTransitionFactory = (function () {
+    /**
+     * @param {?} _triggerName
+     * @param {?} ast
+     * @param {?} matchFns
+     * @param {?} _stateStyles
+     */
+    function AnimationTransitionFactory(_triggerName, ast, matchFns, _stateStyles) {
+        this._triggerName = _triggerName;
+        this.matchFns = matchFns;
+        this._stateStyles = _stateStyles;
+        var normalizedAst = Array.isArray(ast.animation) ?
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["sequence"])(ast.animation) :
+            ast.animation;
+        this._animationAst = normalizedAst;
+    }
+    /**
+     * @param {?} currentState
+     * @param {?} nextState
+     * @return {?}
+     */
+    AnimationTransitionFactory.prototype.match = function (currentState, nextState) {
+        if (!oneOrMoreTransitionsMatch(this.matchFns, currentState, nextState))
+            return;
+        var /** @type {?} */ backupStateStyles = this._stateStyles['*'] || {};
+        var /** @type {?} */ currentStateStyles = this._stateStyles[currentState] || backupStateStyles;
+        var /** @type {?} */ nextStateStyles = this._stateStyles[nextState] || backupStateStyles;
+        var /** @type {?} */ timelines = buildAnimationKeyframes(this._animationAst, currentStateStyles, nextStateStyles);
+        return createTransitionInstruction(this._triggerName, currentState, nextState, nextState === 'void', currentStateStyles, nextStateStyles, timelines);
+    };
+    return AnimationTransitionFactory;
+}());
+/**
+ * @param {?} matchFns
+ * @param {?} currentState
+ * @param {?} nextState
+ * @return {?}
+ */
+function oneOrMoreTransitionsMatch(matchFns, currentState, nextState) {
+    return matchFns.some(function (fn) { return fn(currentState, nextState); });
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @param {?} ast
+ * @return {?}
+ */
+function validateAnimationSequence(ast) {
+    var /** @type {?} */ normalizedAst = Array.isArray(ast) ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["sequence"])(/** @type {?} */ (ast)) : (ast);
+    return new AnimationValidatorVisitor().validate(normalizedAst);
+}
+var AnimationValidatorVisitor = (function () {
+    function AnimationValidatorVisitor() {
+    }
+    /**
+     * @param {?} ast
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.validate = function (ast) {
+        var /** @type {?} */ context = new AnimationValidatorContext();
+        visitAnimationNode(this, ast, context);
+        return context.errors;
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitState = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitTransition = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitSequence = function (ast, context) {
+        var _this = this;
+        ast.steps.forEach(function (step) { return visitAnimationNode(_this, step, context); });
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitGroup = function (ast, context) {
+        var _this = this;
+        var /** @type {?} */ currentTime = context.currentTime;
+        var /** @type {?} */ furthestTime = 0;
+        ast.steps.forEach(function (step) {
+            context.currentTime = currentTime;
+            visitAnimationNode(_this, step, context);
+            furthestTime = Math.max(furthestTime, context.currentTime);
+        });
+        context.currentTime = furthestTime;
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitAnimate = function (ast, context) {
+        // we reassign the timings here so that they are not reparsed each
+        // time an animation occurs
+        context.currentAnimateTimings = ast.timings =
+            parseTimeExpression(/** @type {?} */ (ast.timings), context.errors);
+        var /** @type {?} */ astType = ast.styles && ast.styles.type;
+        if (astType == 5 /* KeyframeSequence */) {
+            this.visitKeyframeSequence(/** @type {?} */ (ast.styles), context);
+        }
+        else {
+            context.currentTime +=
+                context.currentAnimateTimings.duration + context.currentAnimateTimings.delay;
+            if (astType == 6 /* Style */) {
+                this.visitStyle(/** @type {?} */ (ast.styles), context);
+            }
+        }
+        context.currentAnimateTimings = null;
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitStyle = function (ast, context) {
+        var /** @type {?} */ styleData = normalizeStyles(ast.styles);
+        var /** @type {?} */ timings = context.currentAnimateTimings;
+        var /** @type {?} */ endTime = context.currentTime;
+        var /** @type {?} */ startTime = context.currentTime;
+        if (timings && startTime > 0) {
+            startTime -= timings.duration + timings.delay;
+        }
+        Object.keys(styleData).forEach(function (prop) {
+            var /** @type {?} */ collectedEntry = context.collectedStyles[prop];
+            var /** @type {?} */ updateCollectedStyle = true;
+            if (collectedEntry) {
+                if (startTime != endTime && startTime >= collectedEntry.startTime &&
+                    endTime <= collectedEntry.endTime) {
+                    context.errors.push("The CSS property \"" + prop + "\" that exists between the times of \"" + collectedEntry.startTime + "ms\" and \"" + collectedEntry.endTime + "ms\" is also being animated in a parallel animation between the times of \"" + startTime + "ms\" and \"" + endTime + "ms\"");
+                    updateCollectedStyle = false;
+                }
+                // we always choose the smaller start time value since we
+                // want to have a record of the entire animation window where
+                // the style property is being animated in between
+                startTime = collectedEntry.startTime;
+            }
+            if (updateCollectedStyle) {
+                context.collectedStyles[prop] = { startTime: startTime, endTime: endTime };
+            }
+        });
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitKeyframeSequence = function (ast, context) {
+        var _this = this;
+        var /** @type {?} */ totalKeyframesWithOffsets = 0;
+        var /** @type {?} */ offsets = [];
+        var /** @type {?} */ offsetsOutOfOrder = false;
+        var /** @type {?} */ keyframesOutOfRange = false;
+        var /** @type {?} */ previousOffset = 0;
+        ast.steps.forEach(function (step) {
+            var /** @type {?} */ styleData = normalizeStyles(step.styles);
+            var /** @type {?} */ offset = 0;
+            if (styleData.hasOwnProperty('offset')) {
+                totalKeyframesWithOffsets++;
+                offset = (styleData['offset']);
+            }
+            keyframesOutOfRange = keyframesOutOfRange || offset < 0 || offset > 1;
+            offsetsOutOfOrder = offsetsOutOfOrder || offset < previousOffset;
+            previousOffset = offset;
+            offsets.push(offset);
+        });
+        if (keyframesOutOfRange) {
+            context.errors.push("Please ensure that all keyframe offsets are between 0 and 1");
+        }
+        if (offsetsOutOfOrder) {
+            context.errors.push("Please ensure that all keyframe offsets are in order");
+        }
+        var /** @type {?} */ length = ast.steps.length;
+        var /** @type {?} */ generatedOffset = 0;
+        if (totalKeyframesWithOffsets > 0 && totalKeyframesWithOffsets < length) {
+            context.errors.push("Not all style() steps within the declared keyframes() contain offsets");
+        }
+        else if (totalKeyframesWithOffsets == 0) {
+            generatedOffset = 1 / length;
+        }
+        var /** @type {?} */ limit = length - 1;
+        var /** @type {?} */ currentTime = context.currentTime;
+        var /** @type {?} */ animateDuration = ((context.currentAnimateTimings)).duration;
+        ast.steps.forEach(function (step, i) {
+            var /** @type {?} */ offset = generatedOffset > 0 ? (i == limit ? 1 : (generatedOffset * i)) : offsets[i];
+            var /** @type {?} */ durationUpToThisFrame = offset * animateDuration;
+            context.currentTime =
+                currentTime + ((context.currentAnimateTimings)).delay + durationUpToThisFrame; /** @type {?} */
+            ((context.currentAnimateTimings)).duration = durationUpToThisFrame;
+            _this.visitStyle(step, context);
+        });
+    };
+    return AnimationValidatorVisitor;
+}());
+var AnimationValidatorContext = (function () {
+    function AnimationValidatorContext() {
+        this.errors = [];
+        this.currentTime = 0;
+        this.collectedStyles = {};
+    }
+    return AnimationValidatorContext;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * \@experimental Animation support is experimental.
+ * @param {?} name
+ * @param {?} definitions
+ * @return {?}
+ */
+function buildTrigger(name, definitions) {
+    return new AnimationTriggerVisitor().buildTrigger(name, definitions);
+}
+/**
+ * \@experimental Animation support is experimental.
+ */
+var AnimationTrigger = (function () {
+    /**
+     * @param {?} name
+     * @param {?} states
+     * @param {?} _transitionAsts
+     */
+    function AnimationTrigger(name, states, _transitionAsts) {
+        var _this = this;
+        this.name = name;
+        this._transitionAsts = _transitionAsts;
+        this.transitionFactories = [];
+        this.states = {};
+        Object.keys(states).forEach(function (stateName) { _this.states[stateName] = copyStyles(states[stateName], false); });
+        var errors = [];
+        _transitionAsts.forEach(function (ast) {
+            var exprs = parseTransitionExpr(ast.expr, errors);
+            var sequenceErrors = validateAnimationSequence(ast);
+            if (sequenceErrors.length) {
+                errors.push.apply(errors, sequenceErrors);
+            }
+            else {
+                _this.transitionFactories.push(new AnimationTransitionFactory(_this.name, ast, exprs, states));
+            }
+        });
+        if (errors.length) {
+            var LINE_START = '\n - ';
+            throw new Error("Animation parsing for the " + name + " trigger have failed:" + LINE_START + errors.join(LINE_START));
+        }
+    }
+    /**
+     * @param {?} currentState
+     * @param {?} nextState
+     * @return {?}
+     */
+    AnimationTrigger.prototype.createFallbackInstruction = function (currentState, nextState) {
+        var /** @type {?} */ backupStateStyles = this.states['*'] || {};
+        var /** @type {?} */ currentStateStyles = this.states[currentState] || backupStateStyles;
+        var /** @type {?} */ nextStateStyles = this.states[nextState] || backupStateStyles;
+        return createTransitionInstruction(this.name, currentState, nextState, nextState == 'void', currentStateStyles, nextStateStyles, []);
+    };
+    /**
+     * @param {?} currentState
+     * @param {?} nextState
+     * @return {?}
+     */
+    AnimationTrigger.prototype.matchTransition = function (currentState, nextState) {
+        for (var /** @type {?} */ i = 0; i < this.transitionFactories.length; i++) {
+            var /** @type {?} */ result = this.transitionFactories[i].match(currentState, nextState);
+            if (result)
+                return result;
+        }
+        return null;
+    };
+    return AnimationTrigger;
+}());
+var AnimationTriggerContext = (function () {
+    function AnimationTriggerContext() {
+        this.errors = [];
+        this.states = {};
+        this.transitions = [];
+    }
+    return AnimationTriggerContext;
+}());
+var AnimationTriggerVisitor = (function () {
+    function AnimationTriggerVisitor() {
+    }
+    /**
+     * @param {?} name
+     * @param {?} definitions
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.buildTrigger = function (name, definitions) {
+        var _this = this;
+        var /** @type {?} */ context = new AnimationTriggerContext();
+        definitions.forEach(function (def) { return visitAnimationNode(_this, def, context); });
+        return new AnimationTrigger(name, context.states, context.transitions);
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitState = function (ast, context) {
+        var /** @type {?} */ styles = normalizeStyles(ast.styles.styles);
+        ast.name.split(/\s*,\s*/).forEach(function (name) { context.states[name] = styles; });
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitTransition = function (ast, context) {
+        context.transitions.push(ast);
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitSequence = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitGroup = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitAnimate = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitStyle = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitKeyframeSequence = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    return AnimationTriggerVisitor;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var MARKED_FOR_ANIMATION_CLASSNAME = 'ng-animating';
+var MARKED_FOR_ANIMATION_SELECTOR = '.ng-animating';
+var MARKED_FOR_REMOVAL = '$$ngRemove';
+var VOID_STATE = 'void';
+var DomAnimationEngine = (function () {
+    /**
+     * @param {?} _driver
+     * @param {?} _normalizer
+     */
+    function DomAnimationEngine(_driver, _normalizer) {
+        this._driver = _driver;
+        this._normalizer = _normalizer;
+        this._flaggedInserts = new Set();
+        this._queuedRemovals = new Map();
+        this._queuedTransitionAnimations = [];
+        this._activeTransitionAnimations = new Map();
+        this._activeElementAnimations = new Map();
+        this._elementTriggerStates = new Map();
+        this._triggers = Object.create(null);
+        this._triggerListeners = new Map();
+        this._pendingListenerRemovals = new Map();
+    }
+    Object.defineProperty(DomAnimationEngine.prototype, "queuedPlayers", {
+        /**
+         * @return {?}
+         */
+        get: function () {
+            return this._queuedTransitionAnimations.map(function (q) { return q.player; });
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DomAnimationEngine.prototype, "activePlayers", {
+        /**
+         * @return {?}
+         */
+        get: function () {
+            var /** @type {?} */ players = [];
+            this._activeElementAnimations.forEach(function (activePlayers) { return players.push.apply(players, activePlayers); });
+            return players;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @param {?} trigger
+     * @param {?=} name
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.registerTrigger = function (trigger, name) {
+        name = name || trigger.name;
+        if (this._triggers[name]) {
+            return;
+        }
+        this._triggers[name] = buildTrigger(name, trigger.definitions);
+    };
+    /**
+     * @param {?} element
+     * @param {?} domFn
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.onInsert = function (element, domFn) {
+        if (element['nodeType'] == 1) {
+            this._flaggedInserts.add(element);
+        }
+        domFn();
+    };
+    /**
+     * @param {?} element
+     * @param {?} domFn
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.onRemove = function (element, domFn) {
+        var _this = this;
+        if (element['nodeType'] != 1) {
+            domFn();
+            return;
+        }
+        var /** @type {?} */ lookupRef = this._elementTriggerStates.get(element);
+        if (lookupRef) {
+            var /** @type {?} */ possibleTriggers = Object.keys(lookupRef);
+            var /** @type {?} */ hasRemoval = possibleTriggers.some(function (triggerName) {
+                var /** @type {?} */ oldValue = ((lookupRef))[triggerName];
+                var /** @type {?} */ instruction = _this._triggers[triggerName].matchTransition(oldValue, VOID_STATE);
+                return !!instruction;
+            });
+            if (hasRemoval) {
+                element[MARKED_FOR_REMOVAL] = true;
+                this._queuedRemovals.set(element, domFn);
+                return;
+            }
+        }
+        // this means that there are no animations to take on this
+        // leave operation therefore we should fire the done|start callbacks
+        if (this._triggerListeners.has(element)) {
+            element[MARKED_FOR_REMOVAL] = true;
+            this._queuedRemovals.set(element, function () { });
+        }
+        this._onRemovalTransition(element).forEach(function (player) { return player.destroy(); });
+        domFn();
+    };
+    /**
+     * @param {?} element
+     * @param {?} property
+     * @param {?} value
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.setProperty = function (element, property, value) {
+        var /** @type {?} */ trigger = this._triggers[property];
+        if (!trigger) {
+            throw new Error("The provided animation trigger \"" + property + "\" has not been registered!");
+        }
+        var /** @type {?} */ lookupRef = this._elementTriggerStates.get(element);
+        if (!lookupRef) {
+            this._elementTriggerStates.set(element, lookupRef = {});
+        }
+        var /** @type {?} */ oldValue = lookupRef.hasOwnProperty(property) ? lookupRef[property] : VOID_STATE;
+        if (oldValue !== value) {
+            value = normalizeTriggerValue(value);
+            var /** @type {?} */ instruction = trigger.matchTransition(oldValue, value);
+            if (!instruction) {
+                // we do this to make sure we always have an animation player so
+                // that callback operations are properly called
+                instruction = trigger.createFallbackInstruction(oldValue, value);
+            }
+            this.animateTransition(element, instruction);
+            lookupRef[property] = value;
+        }
+    };
+    /**
+     * @param {?} element
+     * @param {?} eventName
+     * @param {?} eventPhase
+     * @param {?} callback
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.listen = function (element, eventName, eventPhase, callback) {
+        var _this = this;
+        if (!eventPhase) {
+            throw new Error("Unable to listen on the animation trigger \"" + eventName + "\" because the provided event is undefined!");
+        }
+        if (!this._triggers[eventName]) {
+            throw new Error("Unable to listen on the animation trigger event \"" + eventPhase + "\" because the animation trigger \"" + eventName + "\" doesn't exist!");
+        }
+        var /** @type {?} */ elementListeners = this._triggerListeners.get(element);
+        if (!elementListeners) {
+            this._triggerListeners.set(element, elementListeners = []);
+        }
+        validatePlayerEvent(eventName, eventPhase);
+        var /** @type {?} */ tuple = ({ triggerName: eventName, phase: eventPhase, callback: callback });
+        elementListeners.push(tuple);
+        return function () {
+            // this is queued up in the event that a removal animation is set
+            // to fire on the element (the listeners need to be set during flush)
+            getOrSetAsInMap(_this._pendingListenerRemovals, element, []).push(tuple);
+        };
+    };
+    /**
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._clearPendingListenerRemovals = function () {
+        var _this = this;
+        this._pendingListenerRemovals.forEach(function (tuples, element) {
+            var /** @type {?} */ elementListeners = _this._triggerListeners.get(element);
+            if (elementListeners) {
+                tuples.forEach(function (tuple) {
+                    var /** @type {?} */ index = elementListeners.indexOf(tuple);
+                    if (index >= 0) {
+                        elementListeners.splice(index, 1);
+                    }
+                });
+            }
+        });
+        this._pendingListenerRemovals.clear();
+    };
+    /**
+     * @param {?} element
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._onRemovalTransition = function (element) {
+        // when a parent animation is set to trigger a removal we want to
+        // find all of the children that are currently animating and clear
+        // them out by destroying each of them.
+        var /** @type {?} */ elms = element.querySelectorAll(MARKED_FOR_ANIMATION_SELECTOR);
+        var _loop_1 = function (i) {
+            var /** @type {?} */ elm = elms[i];
+            var /** @type {?} */ activePlayers = this_1._activeElementAnimations.get(elm);
+            if (activePlayers) {
+                activePlayers.forEach(function (player) { return player.destroy(); });
+            }
+            var /** @type {?} */ activeTransitions = this_1._activeTransitionAnimations.get(elm);
+            if (activeTransitions) {
+                Object.keys(activeTransitions).forEach(function (triggerName) {
+                    var /** @type {?} */ player = activeTransitions[triggerName];
+                    if (player) {
+                        player.destroy();
+                    }
+                });
+            }
+        };
+        var this_1 = this;
+        for (var /** @type {?} */ i = 0; i < elms.length; i++) {
+            _loop_1(/** @type {?} */ i);
+        }
+        // we make a copy of the array because the actual source array is modified
+        // each time a player is finished/destroyed (the forEach loop would fail otherwise)
+        return copyArray(/** @type {?} */ ((this._activeElementAnimations.get(element))));
+    };
+    /**
+     * @param {?} element
+     * @param {?} instruction
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.animateTransition = function (element, instruction) {
+        var _this = this;
+        var /** @type {?} */ triggerName = instruction.triggerName;
+        var /** @type {?} */ previousPlayers;
+        if (instruction.isRemovalTransition) {
+            previousPlayers = this._onRemovalTransition(element);
+        }
+        else {
+            previousPlayers = [];
+            var /** @type {?} */ existingTransitions = this._activeTransitionAnimations.get(element);
+            var /** @type {?} */ existingPlayer = existingTransitions ? existingTransitions[triggerName] : null;
+            if (existingPlayer) {
+                previousPlayers.push(existingPlayer);
+            }
+        }
+        // it's important to do this step before destroying the players
+        // so that the onDone callback below won't fire before this
+        eraseStyles(element, instruction.fromStyles);
+        // we first run this so that the previous animation player
+        // data can be passed into the successive animation players
+        var /** @type {?} */ totalTime = 0;
+        var /** @type {?} */ players = instruction.timelines.map(function (timelineInstruction, i) {
+            totalTime = Math.max(totalTime, timelineInstruction.totalTime);
+            return _this._buildPlayer(element, timelineInstruction, previousPlayers, i);
+        });
+        previousPlayers.forEach(function (previousPlayer) { return previousPlayer.destroy(); });
+        var /** @type {?} */ player = optimizeGroupPlayer(players);
+        player.onDone(function () {
+            player.destroy();
+            var /** @type {?} */ elmTransitionMap = _this._activeTransitionAnimations.get(element);
+            if (elmTransitionMap) {
+                delete elmTransitionMap[triggerName];
+                if (Object.keys(elmTransitionMap).length == 0) {
+                    _this._activeTransitionAnimations.delete(element);
+                }
+            }
+            deleteFromArrayMap(_this._activeElementAnimations, element, player);
+            setStyles(element, instruction.toStyles);
+        });
+        var /** @type {?} */ elmTransitionMap = getOrSetAsInMap(this._activeTransitionAnimations, element, {});
+        elmTransitionMap[triggerName] = player;
+        this._queuePlayer(element, triggerName, player, makeAnimationEvent(element, triggerName, instruction.fromState, instruction.toState, null, // this will be filled in during event creation
+        totalTime));
+        return player;
+    };
+    /**
+     * @param {?} element
+     * @param {?} instructions
+     * @param {?=} previousPlayers
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.animateTimeline = function (element, instructions, previousPlayers) {
+        var _this = this;
+        if (previousPlayers === void 0) { previousPlayers = []; }
+        var /** @type {?} */ players = instructions.map(function (instruction, i) {
+            var /** @type {?} */ player = _this._buildPlayer(element, instruction, previousPlayers, i);
+            player.onDestroy(function () { deleteFromArrayMap(_this._activeElementAnimations, element, player); });
+            _this._markPlayerAsActive(element, player);
+            return player;
+        });
+        return optimizeGroupPlayer(players);
+    };
+    /**
+     * @param {?} element
+     * @param {?} instruction
+     * @param {?} previousPlayers
+     * @param {?=} index
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._buildPlayer = function (element, instruction, previousPlayers, index) {
+        if (index === void 0) { index = 0; }
+        // only the very first animation can absorb the previous styles. This
+        // is here to prevent the an overlap situation where a group animation
+        // absorbs previous styles multiple times for the same element.
+        if (index && previousPlayers.length) {
+            previousPlayers = [];
+        }
+        return this._driver.animate(element, this._normalizeKeyframes(instruction.keyframes), instruction.duration, instruction.delay, instruction.easing, previousPlayers);
+    };
+    /**
+     * @param {?} keyframes
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._normalizeKeyframes = function (keyframes) {
+        var _this = this;
+        var /** @type {?} */ errors = [];
+        var /** @type {?} */ normalizedKeyframes = [];
+        keyframes.forEach(function (kf) {
+            var /** @type {?} */ normalizedKeyframe = {};
+            Object.keys(kf).forEach(function (prop) {
+                var /** @type {?} */ normalizedProp = prop;
+                var /** @type {?} */ normalizedValue = kf[prop];
+                if (prop != 'offset') {
+                    normalizedProp = _this._normalizer.normalizePropertyName(prop, errors);
+                    normalizedValue =
+                        _this._normalizer.normalizeStyleValue(prop, normalizedProp, kf[prop], errors);
+                }
+                normalizedKeyframe[normalizedProp] = normalizedValue;
+            });
+            normalizedKeyframes.push(normalizedKeyframe);
+        });
+        if (errors.length) {
+            var /** @type {?} */ LINE_START = '\n - ';
+            throw new Error("Unable to animate due to the following errors:" + LINE_START + errors.join(LINE_START));
+        }
+        return normalizedKeyframes;
+    };
+    /**
+     * @param {?} element
+     * @param {?} player
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._markPlayerAsActive = function (element, player) {
+        var /** @type {?} */ elementAnimations = getOrSetAsInMap(this._activeElementAnimations, element, []);
+        elementAnimations.push(player);
+    };
+    /**
+     * @param {?} element
+     * @param {?} triggerName
+     * @param {?} player
+     * @param {?} event
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._queuePlayer = function (element, triggerName, player, event) {
+        var /** @type {?} */ tuple = ({ element: element, player: player, triggerName: triggerName, event: event });
+        this._queuedTransitionAnimations.push(tuple);
+        player.init();
+        element.classList.add(MARKED_FOR_ANIMATION_CLASSNAME);
+        player.onDone(function () { element.classList.remove(MARKED_FOR_ANIMATION_CLASSNAME); });
+    };
+    /**
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._flushQueuedAnimations = function () {
+        var _loop_2 = function () {
+            var _a = ((this_2._queuedTransitionAnimations.shift())), player = _a.player, element = _a.element, triggerName = _a.triggerName, event = _a.event;
+            var /** @type {?} */ parent = element;
+            while (parent = parent.parentNode) {
+                // this means that a parent element will or will not
+                // have its own animation operation which in this case
+                // there's no point in even trying to do an animation
+                if (parent[MARKED_FOR_REMOVAL])
+                    return "continue-parentLoop";
+            }
+            var /** @type {?} */ listeners = this_2._triggerListeners.get(element);
+            if (listeners) {
+                listeners.forEach(function (tuple) {
+                    if (tuple.triggerName == triggerName) {
+                        listenOnPlayer(player, tuple.phase, event, tuple.callback);
+                    }
+                });
+            }
+            // if a removal exists for the given element then we need cancel
+            // all the queued players so that a proper removal animation can go
+            if (this_2._queuedRemovals.has(element)) {
+                player.destroy();
+                return "continue";
+            }
+            this_2._markPlayerAsActive(element, player);
+            // in the event that an animation throws an error then we do
+            // not want to re-run animations on any previous animations
+            // if they have already been kicked off beforehand
+            player.init();
+            if (!player.hasStarted()) {
+                player.play();
+            }
+        };
+        var this_2 = this;
+        parentLoop: while (this._queuedTransitionAnimations.length) {
+            var state_1 = _loop_2();
+            switch (state_1) {
+                case "continue-parentLoop": continue parentLoop;
+            }
+        }
+    };
+    /**
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.flush = function () {
+        var _this = this;
+        var /** @type {?} */ leaveListeners = new Map();
+        this._queuedRemovals.forEach(function (callback, element) {
+            var /** @type {?} */ tuple = _this._pendingListenerRemovals.get(element);
+            if (tuple) {
+                leaveListeners.set(element, tuple);
+                _this._pendingListenerRemovals.delete(element);
+            }
+        });
+        this._clearPendingListenerRemovals();
+        this._pendingListenerRemovals = leaveListeners;
+        this._flushQueuedAnimations();
+        var /** @type {?} */ flushAgain = false;
+        this._queuedRemovals.forEach(function (callback, element) {
+            // an item that was inserted/removed in the same flush means
+            // that an animation should not happen anyway
+            if (_this._flaggedInserts.has(element))
+                return;
+            var /** @type {?} */ parent = element;
+            var /** @type {?} */ players = [];
+            while (parent = parent.parentNode) {
+                // there is no reason to even try to
+                if (parent[MARKED_FOR_REMOVAL]) {
+                    callback();
+                    return;
+                }
+                var /** @type {?} */ match = _this._activeElementAnimations.get(parent);
+                if (match) {
+                    players.push.apply(players, match);
+                    break;
+                }
+            }
+            // the loop was unable to find an parent that is animating even
+            // though this element has set to be removed, so the algorithm
+            // should check to see if there are any triggers on the element
+            // that are present to handle a leave animation and then setup
+            // those players to facilitate the callback after done
+            if (players.length == 0) {
+                // this means that the element has valid state triggers
+                var /** @type {?} */ stateDetails_1 = _this._elementTriggerStates.get(element);
+                if (stateDetails_1) {
+                    Object.keys(stateDetails_1).forEach(function (triggerName) {
+                        flushAgain = true;
+                        var /** @type {?} */ oldValue = stateDetails_1[triggerName];
+                        var /** @type {?} */ instruction = _this._triggers[triggerName].matchTransition(oldValue, VOID_STATE);
+                        if (instruction) {
+                            players.push(_this.animateTransition(element, instruction));
+                        }
+                        else {
+                            var /** @type {?} */ event = makeAnimationEvent(element, triggerName, oldValue, VOID_STATE, '', 0);
+                            var /** @type {?} */ player = new __WEBPACK_IMPORTED_MODULE_0__angular_animations__["NoopAnimationPlayer"]();
+                            _this._queuePlayer(element, triggerName, player, event);
+                        }
+                    });
+                }
+            }
+            if (players.length) {
+                optimizeGroupPlayer(players).onDone(callback);
+            }
+            else {
+                callback();
+            }
+        });
+        this._queuedRemovals.clear();
+        this._flaggedInserts.clear();
+        // this means that one or more leave animations were detected
+        if (flushAgain) {
+            this._flushQueuedAnimations();
+            this._clearPendingListenerRemovals();
+        }
+    };
+    return DomAnimationEngine;
+}());
+/**
+ * @param {?} map
+ * @param {?} key
+ * @param {?} defaultValue
+ * @return {?}
+ */
+function getOrSetAsInMap(map, key, defaultValue) {
+    var /** @type {?} */ value = map.get(key);
+    if (!value) {
+        map.set(key, value = defaultValue);
+    }
+    return value;
+}
+/**
+ * @param {?} map
+ * @param {?} key
+ * @param {?} value
+ * @return {?}
+ */
+function deleteFromArrayMap(map, key, value) {
+    var /** @type {?} */ arr = map.get(key);
+    if (arr) {
+        var /** @type {?} */ index = arr.indexOf(value);
+        if (index >= 0) {
+            arr.splice(index, 1);
+            if (arr.length == 0) {
+                map.delete(key);
+            }
+        }
+    }
+}
+/**
+ * @param {?} players
+ * @return {?}
+ */
+function optimizeGroupPlayer(players) {
+    switch (players.length) {
+        case 0:
+            return new __WEBPACK_IMPORTED_MODULE_0__angular_animations__["NoopAnimationPlayer"]();
+        case 1:
+            return players[0];
+        default:
+            return new __WEBPACK_IMPORTED_MODULE_0__angular_animations__["ɵAnimationGroupPlayer"](players);
+    }
+}
+/**
+ * @param {?} source
+ * @return {?}
+ */
+function copyArray(source) {
+    return source ? source.splice(0) : [];
+}
+/**
+ * @param {?} triggerName
+ * @param {?} eventName
+ * @return {?}
+ */
+function validatePlayerEvent(triggerName, eventName) {
+    switch (eventName) {
+        case 'start':
+        case 'done':
+            return;
+        default:
+            throw new Error("The provided animation trigger event \"" + eventName + "\" for the animation trigger \"" + triggerName + "\" is not supported!");
+    }
+}
+/**
+ * @param {?} player
+ * @param {?} eventName
+ * @param {?} baseEvent
+ * @param {?} callback
+ * @return {?}
+ */
+function listenOnPlayer(player, eventName, baseEvent, callback) {
+    switch (eventName) {
+        case 'start':
+            player.onStart(function () {
+                var /** @type {?} */ event = copyAnimationEvent(baseEvent);
+                event.phaseName = 'start';
+                callback(event);
+            });
+            break;
+        case 'done':
+            player.onDone(function () {
+                var /** @type {?} */ event = copyAnimationEvent(baseEvent);
+                event.phaseName = 'done';
+                callback(event);
+            });
+            break;
+    }
+}
+/**
+ * @param {?} e
+ * @return {?}
+ */
+function copyAnimationEvent(e) {
+    return makeAnimationEvent(e.element, e.triggerName, e.fromState, e.toState, e.phaseName, e.totalTime);
+}
+/**
+ * @param {?} element
+ * @param {?} triggerName
+ * @param {?} fromState
+ * @param {?} toState
+ * @param {?} phaseName
+ * @param {?} totalTime
+ * @return {?}
+ */
+function makeAnimationEvent(element, triggerName, fromState, toState, phaseName, totalTime) {
+    return ({ element: element, triggerName: triggerName, fromState: fromState, toState: toState, phaseName: phaseName, totalTime: totalTime });
+}
+/**
+ * @param {?} value
+ * @return {?}
+ */
+function normalizeTriggerValue(value) {
+    switch (typeof value) {
+        case 'boolean':
+            return value ? '1' : '0';
+        default:
+            return value ? value.toString() : null;
+    }
+}
+/**
+ * \@experimental Animation support is experimental.
+ * @abstract
+ */
+var AnimationStyleNormalizer = (function () {
+    function AnimationStyleNormalizer() {
+    }
+    /**
+     * @abstract
+     * @param {?} propertyName
+     * @param {?} errors
+     * @return {?}
+     */
+    AnimationStyleNormalizer.prototype.normalizePropertyName = function (propertyName, errors) { };
+    /**
+     * @abstract
+     * @param {?} userProvidedProperty
+     * @param {?} normalizedProperty
+     * @param {?} value
+     * @param {?} errors
+     * @return {?}
+     */
+    AnimationStyleNormalizer.prototype.normalizeStyleValue = function (userProvidedProperty, normalizedProperty, value, errors) { };
+    return AnimationStyleNormalizer;
+}());
+/**
+ * \@experimental Animation support is experimental.
+ */
+var NoopAnimationStyleNormalizer = (function () {
+    function NoopAnimationStyleNormalizer() {
+    }
+    /**
+     * @param {?} propertyName
+     * @param {?} errors
+     * @return {?}
+     */
+    NoopAnimationStyleNormalizer.prototype.normalizePropertyName = function (propertyName, errors) { return propertyName; };
+    /**
+     * @param {?} userProvidedProperty
+     * @param {?} normalizedProperty
+     * @param {?} value
+     * @param {?} errors
+     * @return {?}
+     */
+    NoopAnimationStyleNormalizer.prototype.normalizeStyleValue = function (userProvidedProperty, normalizedProperty, value, errors) {
+        return (value);
+    };
+    return NoopAnimationStyleNormalizer;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var Animation = (function () {
+    /**
+     * @param {?} input
+     */
+    function Animation(input) {
+        var ast = Array.isArray(input) ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["sequence"])(input) : input;
+        var errors = validateAnimationSequence(ast);
+        if (errors.length) {
+            var errorMessage = "animation validation failed:\n" + errors.join("\n");
+            throw new Error(errorMessage);
+        }
+        this._animationAst = ast;
+    }
+    /**
+     * @param {?} startingStyles
+     * @param {?} destinationStyles
+     * @return {?}
+     */
+    Animation.prototype.buildTimelines = function (startingStyles, destinationStyles) {
+        var /** @type {?} */ start = Array.isArray(startingStyles) ? normalizeStyles(startingStyles) : (startingStyles);
+        var /** @type {?} */ dest = Array.isArray(destinationStyles) ? normalizeStyles(destinationStyles) : (destinationStyles);
+        return buildAnimationKeyframes(this._animationAst, start, dest);
+    };
+    /**
+     * @param {?} injector
+     * @param {?} element
+     * @param {?=} startingStyles
+     * @param {?=} destinationStyles
+     * @return {?}
+     */
+    Animation.prototype.create = function (injector, element, startingStyles, destinationStyles) {
+        if (startingStyles === void 0) { startingStyles = {}; }
+        if (destinationStyles === void 0) { destinationStyles = {}; }
+        var /** @type {?} */ instructions = this.buildTimelines(startingStyles, destinationStyles);
+        // note the code below is only here to make the tests happy (once the new renderer is
+        // within core then the code below will interact with Renderer.transition(...))
+        var /** @type {?} */ driver = injector.get(AnimationDriver);
+        var /** @type {?} */ normalizer = injector.get(AnimationStyleNormalizer);
+        var /** @type {?} */ engine = new DomAnimationEngine(driver, normalizer);
+        return engine.animateTimeline(element, instructions);
+    };
+    return Animation;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var WebAnimationsStyleNormalizer = (function (_super) {
+    __extends(WebAnimationsStyleNormalizer, _super);
+    function WebAnimationsStyleNormalizer() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * @param {?} propertyName
+     * @param {?} errors
+     * @return {?}
+     */
+    WebAnimationsStyleNormalizer.prototype.normalizePropertyName = function (propertyName, errors) {
+        return dashCaseToCamelCase(propertyName);
+    };
+    /**
+     * @param {?} userProvidedProperty
+     * @param {?} normalizedProperty
+     * @param {?} value
+     * @param {?} errors
+     * @return {?}
+     */
+    WebAnimationsStyleNormalizer.prototype.normalizeStyleValue = function (userProvidedProperty, normalizedProperty, value, errors) {
+        var /** @type {?} */ unit = '';
+        var /** @type {?} */ strVal = value.toString().trim();
+        if (DIMENSIONAL_PROP_MAP[normalizedProperty] && value !== 0 && value !== '0') {
+            if (typeof value === 'number') {
+                unit = 'px';
+            }
+            else {
+                var /** @type {?} */ valAndSuffixMatch = value.match(/^[+-]?[\d\.]+([a-z]*)$/);
+                if (valAndSuffixMatch && valAndSuffixMatch[1].length == 0) {
+                    errors.push("Please provide a CSS unit value for " + userProvidedProperty + ":" + value);
+                }
+            }
+        }
+        return strVal + unit;
+    };
+    return WebAnimationsStyleNormalizer;
+}(AnimationStyleNormalizer));
+var DIMENSIONAL_PROP_MAP = makeBooleanMap('width,height,minWidth,minHeight,maxWidth,maxHeight,left,top,bottom,right,fontSize,outlineWidth,outlineOffset,paddingTop,paddingLeft,paddingBottom,paddingRight,marginTop,marginLeft,marginBottom,marginRight,borderRadius,borderWidth,borderTopWidth,borderLeftWidth,borderRightWidth,borderBottomWidth,textIndent'
+    .split(','));
+/**
+ * @param {?} keys
+ * @return {?}
+ */
+function makeBooleanMap(keys) {
+    var /** @type {?} */ map = {};
+    keys.forEach(function (key) { return map[key] = true; });
+    return map;
+}
+var DASH_CASE_REGEXP = /-+([a-z0-9])/g;
+/**
+ * @param {?} input
+ * @return {?}
+ */
+function dashCaseToCamelCase(input) {
+    return input.replace(DASH_CASE_REGEXP, function () {
+        var m = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            m[_i] = arguments[_i];
+        }
+        return m[1].toUpperCase();
+    });
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var DEFAULT_STATE_VALUE = 'void';
+var DEFAULT_STATE_STYLES = '*';
+var NoopAnimationEngine = (function (_super) {
+    __extends(NoopAnimationEngine, _super);
+    function NoopAnimationEngine() {
+        var _this = _super.apply(this, arguments) || this;
+        _this._listeners = new Map();
+        _this._changes = [];
+        _this._flaggedRemovals = new Set();
+        _this._onDoneFns = [];
+        _this._triggerStyles = Object.create(null);
+        return _this;
+    }
+    /**
+     * @param {?} trigger
+     * @param {?=} name
+     * @return {?}
+     */
+    NoopAnimationEngine.prototype.registerTrigger = function (trigger, name) {
+        name = name || trigger.name;
+        if (this._triggerStyles[name]) {
+            return;
+        }
+        var /** @type {?} */ stateMap = {};
+        trigger.definitions.forEach(function (def) {
+            if (def.type === 0 /* State */) {
+                var /** @type {?} */ stateDef = (def);
+                stateMap[stateDef.name] = normalizeStyles(stateDef.styles.styles);
+            }
+        });
+        this._triggerStyles[name] = stateMap;
+    };
+    /**
+     * @param {?} element
+     * @param {?} domFn
+     * @return {?}
+     */
+    NoopAnimationEngine.prototype.onInsert = function (element, domFn) { domFn(); };
+    /**
+     * @param {?} element
+     * @param {?} domFn
+     * @return {?}
+     */
+    NoopAnimationEngine.prototype.onRemove = function (element, domFn) {
+        domFn();
+        if (element['nodeType'] == 1) {
+            this._flaggedRemovals.add(element);
+        }
+    };
+    /**
+     * @param {?} element
+     * @param {?} property
+     * @param {?} value
+     * @return {?}
+     */
+    NoopAnimationEngine.prototype.setProperty = function (element, property, value) {
+        var /** @type {?} */ storageProp = makeStorageProp(property);
+        var /** @type {?} */ oldValue = element[storageProp] || DEFAULT_STATE_VALUE;
+        this._changes.push(/** @type {?} */ ({ element: element, oldValue: oldValue, newValue: value, triggerName: property }));
+        var /** @type {?} */ triggerStateStyles = this._triggerStyles[property] || {};
+        var /** @type {?} */ fromStateStyles = triggerStateStyles[oldValue] || triggerStateStyles[DEFAULT_STATE_STYLES];
+        if (fromStateStyles) {
+            eraseStyles(element, fromStateStyles);
+        }
+        element[storageProp] = value;
+        this._onDoneFns.push(function () {
+            var /** @type {?} */ toStateStyles = triggerStateStyles[value] || triggerStateStyles[DEFAULT_STATE_STYLES];
+            if (toStateStyles) {
+                setStyles(element, toStateStyles);
+            }
+        });
+    };
+    /**
+     * @param {?} element
+     * @param {?} eventName
+     * @param {?} eventPhase
+     * @param {?} callback
+     * @return {?}
+     */
+    NoopAnimationEngine.prototype.listen = function (element, eventName, eventPhase, callback) {
+        var /** @type {?} */ listeners = this._listeners.get(element);
+        if (!listeners) {
+            this._listeners.set(element, listeners = []);
+        }
+        var /** @type {?} */ tuple = ({ triggerName: eventName, eventPhase: eventPhase, callback: callback });
+        listeners.push(tuple);
+        return function () { return tuple.doRemove = true; };
+    };
+    /**
+     * @return {?}
+     */
+    NoopAnimationEngine.prototype.flush = function () {
+        var _this = this;
+        var /** @type {?} */ onStartCallbacks = [];
+        var /** @type {?} */ onDoneCallbacks = [];
+        /**
+         * @param {?} listener
+         * @param {?} data
+         * @return {?}
+         */
+        function handleListener(listener, data) {
+            var /** @type {?} */ phase = listener.eventPhase;
+            var /** @type {?} */ event = makeAnimationEvent$1(data.element, data.triggerName, data.oldValue, data.newValue, phase, 0);
+            if (phase == 'start') {
+                onStartCallbacks.push(function () { return listener.callback(event); });
+            }
+            else if (phase == 'done') {
+                onDoneCallbacks.push(function () { return listener.callback(event); });
+            }
+        }
+        this._changes.forEach(function (change) {
+            var /** @type {?} */ element = change.element;
+            var /** @type {?} */ listeners = _this._listeners.get(element);
+            if (listeners) {
+                listeners.forEach(function (listener) {
+                    if (listener.triggerName == change.triggerName) {
+                        handleListener(listener, change);
+                    }
+                });
+            }
+        });
+        // upon removal ALL the animation triggers need to get fired
+        this._flaggedRemovals.forEach(function (element) {
+            var /** @type {?} */ listeners = _this._listeners.get(element);
+            if (listeners) {
+                listeners.forEach(function (listener) {
+                    var /** @type {?} */ triggerName = listener.triggerName;
+                    var /** @type {?} */ storageProp = makeStorageProp(triggerName);
+                    handleListener(listener, /** @type {?} */ ({
+                        element: element,
+                        triggerName: triggerName,
+                        oldValue: element[storageProp] || DEFAULT_STATE_VALUE,
+                        newValue: DEFAULT_STATE_VALUE
+                    }));
+                });
+            }
+        });
+        // remove all the listeners after everything is complete
+        Array.from(this._listeners.keys()).forEach(function (element) {
+            var /** @type {?} */ listenersToKeep = ((_this._listeners.get(element))).filter(function (l) { return !l.doRemove; });
+            if (listenersToKeep.length) {
+                _this._listeners.set(element, listenersToKeep);
+            }
+            else {
+                _this._listeners.delete(element);
+            }
+        });
+        onStartCallbacks.forEach(function (fn) { return fn(); });
+        onDoneCallbacks.forEach(function (fn) { return fn(); });
+        this._flaggedRemovals.clear();
+        this._changes = [];
+        this._onDoneFns.forEach(function (doneFn) { return doneFn(); });
+        this._onDoneFns = [];
+    };
+    Object.defineProperty(NoopAnimationEngine.prototype, "activePlayers", {
+        /**
+         * @return {?}
+         */
+        get: function () { return []; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NoopAnimationEngine.prototype, "queuedPlayers", {
+        /**
+         * @return {?}
+         */
+        get: function () { return []; },
+        enumerable: true,
+        configurable: true
+    });
+    return NoopAnimationEngine;
+}(AnimationEngine));
+/**
+ * @param {?} element
+ * @param {?} triggerName
+ * @param {?} fromState
+ * @param {?} toState
+ * @param {?} phaseName
+ * @param {?} totalTime
+ * @return {?}
+ */
+function makeAnimationEvent$1(element, triggerName, fromState, toState, phaseName, totalTime) {
+    return ({ element: element, triggerName: triggerName, fromState: fromState, toState: toState, phaseName: phaseName, totalTime: totalTime });
+}
+/**
+ * @param {?} property
+ * @return {?}
+ */
+function makeStorageProp(property) {
+    return '_@_' + property;
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var WebAnimationsPlayer = (function () {
+    /**
+     * @param {?} element
+     * @param {?} keyframes
+     * @param {?} options
+     * @param {?=} previousPlayers
+     */
+    function WebAnimationsPlayer(element, keyframes, options, previousPlayers) {
+        if (previousPlayers === void 0) { previousPlayers = []; }
+        var _this = this;
+        this.element = element;
+        this.keyframes = keyframes;
+        this.options = options;
+        this._onDoneFns = [];
+        this._onStartFns = [];
+        this._onDestroyFns = [];
+        this._initialized = false;
+        this._finished = false;
+        this._started = false;
+        this._destroyed = false;
+        this.time = 0;
+        this.parentPlayer = null;
+        this._duration = options['duration'];
+        this._delay = options['delay'] || 0;
+        this.time = this._duration + this._delay;
+        this.previousStyles = {};
+        previousPlayers.forEach(function (player) {
+            var styles = player._captureStyles();
+            Object.keys(styles).forEach(function (prop) { return _this.previousStyles[prop] = styles[prop]; });
+        });
+    }
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype._onFinish = function () {
+        if (!this._finished) {
+            this._finished = true;
+            this._onDoneFns.forEach(function (fn) { return fn(); });
+            this._onDoneFns = [];
+        }
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.init = function () {
+        var _this = this;
+        if (this._initialized)
+            return;
+        this._initialized = true;
+        var /** @type {?} */ keyframes = this.keyframes.map(function (styles) {
+            var /** @type {?} */ formattedKeyframe = {};
+            Object.keys(styles).forEach(function (prop, index) {
+                var /** @type {?} */ value = styles[prop];
+                if (value == __WEBPACK_IMPORTED_MODULE_0__angular_animations__["AUTO_STYLE"]) {
+                    value = _computeStyle(_this.element, prop);
+                }
+                if (value != undefined) {
+                    formattedKeyframe[prop] = value;
+                }
+            });
+            return formattedKeyframe;
+        });
+        var /** @type {?} */ previousStyleProps = Object.keys(this.previousStyles);
+        if (previousStyleProps.length) {
+            var /** @type {?} */ startingKeyframe_1 = keyframes[0];
+            var /** @type {?} */ missingStyleProps_1 = [];
+            previousStyleProps.forEach(function (prop) {
+                if (!startingKeyframe_1.hasOwnProperty(prop)) {
+                    missingStyleProps_1.push(prop);
+                }
+                startingKeyframe_1[prop] = _this.previousStyles[prop];
+            });
+            if (missingStyleProps_1.length) {
+                var /** @type {?} */ self_1 = this;
+                var _loop_3 = function () {
+                    var /** @type {?} */ kf = keyframes[i];
+                    missingStyleProps_1.forEach(function (prop) {
+                        kf[prop] = _computeStyle(self_1.element, prop);
+                    });
+                };
+                // tslint:disable-next-line
+                for (var /** @type {?} */ i = 1; i < keyframes.length; i++) {
+                    _loop_3();
+                }
+            }
+        }
+        this._player = this._triggerWebAnimation(this.element, keyframes, this.options);
+        this._finalKeyframe =
+            keyframes.length ? _copyKeyframeStyles(keyframes[keyframes.length - 1]) : {};
+        // this is required so that the player doesn't start to animate right away
+        this._resetDomPlayerState();
+        this._player.addEventListener('finish', function () { return _this._onFinish(); });
+    };
+    /**
+     * \@internal
+     * @param {?} element
+     * @param {?} keyframes
+     * @param {?} options
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype._triggerWebAnimation = function (element, keyframes, options) {
+        // jscompiler doesn't seem to know animate is a native property because it's not fully
+        // supported yet across common browsers (we polyfill it for Edge/Safari) [CL #143630929]
+        return (element['animate'](keyframes, options));
+    };
+    Object.defineProperty(WebAnimationsPlayer.prototype, "domPlayer", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this._player; },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.onStart = function (fn) { this._onStartFns.push(fn); };
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.onDone = function (fn) { this._onDoneFns.push(fn); };
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.onDestroy = function (fn) { this._onDestroyFns.push(fn); };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.play = function () {
+        this.init();
+        if (!this.hasStarted()) {
+            this._onStartFns.forEach(function (fn) { return fn(); });
+            this._onStartFns = [];
+            this._started = true;
+        }
+        this._player.play();
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.pause = function () {
+        this.init();
+        this._player.pause();
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.finish = function () {
+        this.init();
+        this._onFinish();
+        this._player.finish();
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.reset = function () {
+        this._resetDomPlayerState();
+        this._destroyed = false;
+        this._finished = false;
+        this._started = false;
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype._resetDomPlayerState = function () {
+        if (this._player) {
+            this._player.cancel();
+        }
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.restart = function () {
+        this.reset();
+        this.play();
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.hasStarted = function () { return this._started; };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.destroy = function () {
+        if (!this._destroyed) {
+            this._resetDomPlayerState();
+            this._onFinish();
+            this._destroyed = true;
+            this._onDestroyFns.forEach(function (fn) { return fn(); });
+            this._onDestroyFns = [];
+        }
+    };
+    /**
+     * @param {?} p
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.setPosition = function (p) { this._player.currentTime = p * this.time; };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.getPosition = function () { return this._player.currentTime / this.time; };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype._captureStyles = function () {
+        var _this = this;
+        var /** @type {?} */ styles = {};
+        if (this.hasStarted()) {
+            Object.keys(this._finalKeyframe).forEach(function (prop) {
+                if (prop != 'offset') {
+                    styles[prop] =
+                        _this._finished ? _this._finalKeyframe[prop] : _computeStyle(_this.element, prop);
+                }
+            });
+        }
+        return styles;
+    };
+    return WebAnimationsPlayer;
+}());
+/**
+ * @param {?} element
+ * @param {?} prop
+ * @return {?}
+ */
+function _computeStyle(element, prop) {
+    return ((window.getComputedStyle(element)))[prop];
+}
+/**
+ * @param {?} styles
+ * @return {?}
+ */
+function _copyKeyframeStyles(styles) {
+    var /** @type {?} */ newStyles = {};
+    Object.keys(styles).forEach(function (prop) {
+        if (prop != 'offset') {
+            newStyles[prop] = styles[prop];
+        }
+    });
+    return newStyles;
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var WebAnimationsDriver = (function () {
+    function WebAnimationsDriver() {
+    }
+    /**
+     * @param {?} element
+     * @param {?} keyframes
+     * @param {?} duration
+     * @param {?} delay
+     * @param {?} easing
+     * @param {?=} previousPlayers
+     * @return {?}
+     */
+    WebAnimationsDriver.prototype.animate = function (element, keyframes, duration, delay, easing, previousPlayers) {
+        if (previousPlayers === void 0) { previousPlayers = []; }
+        var /** @type {?} */ playerOptions = { 'duration': duration, 'delay': delay, 'fill': 'forwards' };
+        // we check for this to avoid having a null|undefined value be present
+        // for the easing (which results in an error for certain browsers #9752)
+        if (easing) {
+            playerOptions['easing'] = easing;
+        }
+        var /** @type {?} */ previousWebAnimationPlayers = (previousPlayers.filter(function (player) { return player instanceof WebAnimationsPlayer; }));
+        return new WebAnimationsPlayer(element, keyframes, playerOptions, previousWebAnimationPlayers);
+    };
+    return WebAnimationsDriver;
+}());
+/**
+ * @return {?}
+ */
+function supportsWebAnimations() {
+    return typeof Element !== 'undefined' && typeof ((Element)).prototype['animate'] === 'function';
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @module
+ * @description
+ * Entry point for all animation APIs of the animation browser package.
+ */
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of the animation package.
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+//# sourceMappingURL=browser.es5.js.map
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserAnimationsModule", function() { return BrowserAnimationsModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoopAnimationsModule", function() { return NoopAnimationsModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵAnimationRenderer", function() { return AnimationRenderer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵAnimationRendererFactory", function() { return AnimationRendererFactory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵe", function() { return BROWSER_ANIMATIONS_PROVIDERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵf", function() { return BROWSER_NOOP_ANIMATIONS_PROVIDERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return InjectableAnimationEngine; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return instantiateDefaultStyleNormalizer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return instantiateRendererFactory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return instantiateSupportedAnimationDriver; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__ = __webpack_require__(39);
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+/**
+ * @license Angular v4.1.2
+ * (c) 2010-2017 Google, Inc. https://angular.io/
+ * License: MIT
+ */
+
+
+
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var AnimationRendererFactory = (function () {
+    /**
+     * @param {?} delegate
+     * @param {?} _engine
+     * @param {?} _zone
+     */
+    function AnimationRendererFactory(delegate, _engine, _zone) {
+        this.delegate = delegate;
+        this._engine = _engine;
+        this._zone = _zone;
+    }
+    /**
+     * @param {?} hostElement
+     * @param {?} type
+     * @return {?}
+     */
+    AnimationRendererFactory.prototype.createRenderer = function (hostElement, type) {
+        var _this = this;
+        var /** @type {?} */ delegate = this.delegate.createRenderer(hostElement, type);
+        if (!hostElement || !type || !type.data || !type.data['animation'])
+            return delegate;
+        var /** @type {?} */ namespaceId = type.id;
+        var /** @type {?} */ animationTriggers = (type.data['animation']);
+        animationTriggers.forEach(function (trigger) { return _this._engine.registerTrigger(trigger, namespaceify(namespaceId, trigger.name)); });
+        return new AnimationRenderer(delegate, this._engine, this._zone, namespaceId);
+    };
+    return AnimationRendererFactory;
+}());
+AnimationRendererFactory.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/**
+ * @nocollapse
+ */
+AnimationRendererFactory.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["RendererFactory2"], },
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], },
+]; };
+var AnimationRenderer = (function () {
+    /**
+     * @param {?} delegate
+     * @param {?} _engine
+     * @param {?} _zone
+     * @param {?} _namespaceId
+     */
+    function AnimationRenderer(delegate, _engine, _zone, _namespaceId) {
+        this.delegate = delegate;
+        this._engine = _engine;
+        this._zone = _zone;
+        this._namespaceId = _namespaceId;
+        this.destroyNode = null;
+        this._flushPromise = null;
+        this.destroyNode = this.delegate.destroyNode ? function (n) { return delegate.destroyNode(n); } : null;
+    }
+    Object.defineProperty(AnimationRenderer.prototype, "data", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.delegate.data; },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @return {?}
+     */
+    AnimationRenderer.prototype.destroy = function () { this.delegate.destroy(); };
+    /**
+     * @param {?} name
+     * @param {?=} namespace
+     * @return {?}
+     */
+    AnimationRenderer.prototype.createElement = function (name, namespace) {
+        return this.delegate.createElement(name, namespace);
+    };
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    AnimationRenderer.prototype.createComment = function (value) { return this.delegate.createComment(value); };
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    AnimationRenderer.prototype.createText = function (value) { return this.delegate.createText(value); };
+    /**
+     * @param {?} selectorOrNode
+     * @return {?}
+     */
+    AnimationRenderer.prototype.selectRootElement = function (selectorOrNode) {
+        return this.delegate.selectRootElement(selectorOrNode);
+    };
+    /**
+     * @param {?} node
+     * @return {?}
+     */
+    AnimationRenderer.prototype.parentNode = function (node) { return this.delegate.parentNode(node); };
+    /**
+     * @param {?} node
+     * @return {?}
+     */
+    AnimationRenderer.prototype.nextSibling = function (node) { return this.delegate.nextSibling(node); };
+    /**
+     * @param {?} el
+     * @param {?} name
+     * @param {?} value
+     * @param {?=} namespace
+     * @return {?}
+     */
+    AnimationRenderer.prototype.setAttribute = function (el, name, value, namespace) {
+        this.delegate.setAttribute(el, name, value, namespace);
+    };
+    /**
+     * @param {?} el
+     * @param {?} name
+     * @param {?=} namespace
+     * @return {?}
+     */
+    AnimationRenderer.prototype.removeAttribute = function (el, name, namespace) {
+        this.delegate.removeAttribute(el, name, namespace);
+    };
+    /**
+     * @param {?} el
+     * @param {?} name
+     * @return {?}
+     */
+    AnimationRenderer.prototype.addClass = function (el, name) { this.delegate.addClass(el, name); };
+    /**
+     * @param {?} el
+     * @param {?} name
+     * @return {?}
+     */
+    AnimationRenderer.prototype.removeClass = function (el, name) { this.delegate.removeClass(el, name); };
+    /**
+     * @param {?} el
+     * @param {?} style
+     * @param {?} value
+     * @param {?} flags
+     * @return {?}
+     */
+    AnimationRenderer.prototype.setStyle = function (el, style, value, flags) {
+        this.delegate.setStyle(el, style, value, flags);
+    };
+    /**
+     * @param {?} el
+     * @param {?} style
+     * @param {?} flags
+     * @return {?}
+     */
+    AnimationRenderer.prototype.removeStyle = function (el, style, flags) {
+        this.delegate.removeStyle(el, style, flags);
+    };
+    /**
+     * @param {?} node
+     * @param {?} value
+     * @return {?}
+     */
+    AnimationRenderer.prototype.setValue = function (node, value) { this.delegate.setValue(node, value); };
+    /**
+     * @param {?} parent
+     * @param {?} newChild
+     * @return {?}
+     */
+    AnimationRenderer.prototype.appendChild = function (parent, newChild) {
+        var _this = this;
+        this._engine.onInsert(newChild, function () { return _this.delegate.appendChild(parent, newChild); });
+        this._queueFlush();
+    };
+    /**
+     * @param {?} parent
+     * @param {?} newChild
+     * @param {?} refChild
+     * @return {?}
+     */
+    AnimationRenderer.prototype.insertBefore = function (parent, newChild, refChild) {
+        var _this = this;
+        this._engine.onInsert(newChild, function () { return _this.delegate.insertBefore(parent, newChild, refChild); });
+        this._queueFlush();
+    };
+    /**
+     * @param {?} parent
+     * @param {?} oldChild
+     * @return {?}
+     */
+    AnimationRenderer.prototype.removeChild = function (parent, oldChild) {
+        var _this = this;
+        this._engine.onRemove(oldChild, function () {
+            // Note: if an component element has a leave animation, and the component
+            // a host leave animation, the view engine will call `removeChild` for the parent
+            // component renderer as well as for the child component renderer.
+            // Therefore, we need to check if we already removed the element.
+            if (_this.delegate.parentNode(oldChild)) {
+                _this.delegate.removeChild(parent, oldChild);
+            }
+        });
+        this._queueFlush();
+    };
+    /**
+     * @param {?} el
+     * @param {?} name
+     * @param {?} value
+     * @return {?}
+     */
+    AnimationRenderer.prototype.setProperty = function (el, name, value) {
+        if (name.charAt(0) == '@') {
+            this._engine.setProperty(el, namespaceify(this._namespaceId, name.substr(1)), value);
+            this._queueFlush();
+        }
+        else {
+            this.delegate.setProperty(el, name, value);
+        }
+    };
+    /**
+     * @param {?} target
+     * @param {?} eventName
+     * @param {?} callback
+     * @return {?}
+     */
+    AnimationRenderer.prototype.listen = function (target, eventName, callback) {
+        var _this = this;
+        if (eventName.charAt(0) == '@') {
+            var /** @type {?} */ element = resolveElementFromTarget(target);
+            var _a = parseTriggerCallbackName(eventName.substr(1)), name = _a[0], phase = _a[1];
+            return this._engine.listen(element, namespaceify(this._namespaceId, name), phase, function (event) {
+                var /** @type {?} */ e = (event);
+                if (e.triggerName) {
+                    e.triggerName = deNamespaceify(_this._namespaceId, e.triggerName);
+                }
+                _this._zone.run(function () { return callback(event); });
+            });
+        }
+        return this.delegate.listen(target, eventName, callback);
+    };
+    /**
+     * @return {?}
+     */
+    AnimationRenderer.prototype._queueFlush = function () {
+        var _this = this;
+        if (!this._flushPromise) {
+            this._zone.runOutsideAngular(function () {
+                _this._flushPromise = Promise.resolve(null).then(function () {
+                    _this._flushPromise = ((null));
+                    _this._engine.flush();
+                });
+            });
+        }
+    };
+    return AnimationRenderer;
+}());
+/**
+ * @param {?} target
+ * @return {?}
+ */
+function resolveElementFromTarget(target) {
+    switch (target) {
+        case 'body':
+            return document.body;
+        case 'document':
+            return document;
+        case 'window':
+            return window;
+        default:
+            return target;
+    }
+}
+/**
+ * @param {?} triggerName
+ * @return {?}
+ */
+function parseTriggerCallbackName(triggerName) {
+    var /** @type {?} */ dotIndex = triggerName.indexOf('.');
+    var /** @type {?} */ trigger = triggerName.substring(0, dotIndex);
+    var /** @type {?} */ phase = triggerName.substr(dotIndex + 1);
+    return [trigger, phase];
+}
+/**
+ * @param {?} namespaceId
+ * @param {?} value
+ * @return {?}
+ */
+function namespaceify(namespaceId, value) {
+    return namespaceId + "#" + value;
+}
+/**
+ * @param {?} namespaceId
+ * @param {?} value
+ * @return {?}
+ */
+function deNamespaceify(namespaceId, value) {
+    return value.replace(namespaceId + '#', '');
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var InjectableAnimationEngine = (function (_super) {
+    __extends(InjectableAnimationEngine, _super);
+    /**
+     * @param {?} driver
+     * @param {?} normalizer
+     */
+    function InjectableAnimationEngine(driver, normalizer) {
+        return _super.call(this, driver, normalizer) || this;
+    }
+    return InjectableAnimationEngine;
+}(__WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["b" /* ɵDomAnimationEngine */]));
+InjectableAnimationEngine.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/**
+ * @nocollapse
+ */
+InjectableAnimationEngine.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["c" /* AnimationDriver */], },
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["d" /* ɵAnimationStyleNormalizer */], },
+]; };
+/**
+ * @return {?}
+ */
+function instantiateSupportedAnimationDriver() {
+    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["e" /* ɵsupportsWebAnimations */])()) {
+        return new __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["f" /* ɵWebAnimationsDriver */]();
+    }
+    return new __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["g" /* ɵNoopAnimationDriver */]();
+}
+/**
+ * @return {?}
+ */
+function instantiateDefaultStyleNormalizer() {
+    return new __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["h" /* ɵWebAnimationsStyleNormalizer */]();
+}
+/**
+ * @param {?} renderer
+ * @param {?} engine
+ * @param {?} zone
+ * @return {?}
+ */
+function instantiateRendererFactory(renderer, engine, zone) {
+    return new AnimationRendererFactory(renderer, engine, zone);
+}
+/**
+ * Separate providers from the actual module so that we can do a local modification in Google3 to
+ * include them in the BrowserModule.
+ */
+var BROWSER_ANIMATIONS_PROVIDERS = [
+    { provide: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["c" /* AnimationDriver */], useFactory: instantiateSupportedAnimationDriver },
+    { provide: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["d" /* ɵAnimationStyleNormalizer */], useFactory: instantiateDefaultStyleNormalizer },
+    { provide: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], useClass: InjectableAnimationEngine }, {
+        provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["RendererFactory2"],
+        useFactory: instantiateRendererFactory,
+        deps: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["ɵDomRendererFactory2"], __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]]
+    }
+];
+/**
+ * Separate providers from the actual module so that we can do a local modification in Google3 to
+ * include them in the BrowserTestingModule.
+ */
+var BROWSER_NOOP_ANIMATIONS_PROVIDERS = [
+    { provide: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], useClass: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["i" /* ɵNoopAnimationEngine */] }, {
+        provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["RendererFactory2"],
+        useFactory: instantiateRendererFactory,
+        deps: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["ɵDomRendererFactory2"], __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]]
+    }
+];
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * \@experimental Animation support is experimental.
+ */
+var BrowserAnimationsModule = (function () {
+    function BrowserAnimationsModule() {
+    }
+    return BrowserAnimationsModule;
+}());
+BrowserAnimationsModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                imports: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["BrowserModule"]],
+                providers: BROWSER_ANIMATIONS_PROVIDERS,
+            },] },
+];
+/**
+ * @nocollapse
+ */
+BrowserAnimationsModule.ctorParameters = function () { return []; };
+/**
+ * \@experimental Animation support is experimental.
+ */
+var NoopAnimationsModule = (function () {
+    function NoopAnimationsModule() {
+    }
+    return NoopAnimationsModule;
+}());
+NoopAnimationsModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                imports: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["BrowserModule"]],
+                providers: BROWSER_NOOP_ANIMATIONS_PROVIDERS,
+            },] },
+];
+/**
+ * @nocollapse
+ */
+NoopAnimationsModule.ctorParameters = function () { return []; };
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @module
+ * @description
+ * Entry point for all animation APIs of the animation browser package.
+ */
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of the animation package.
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+//# sourceMappingURL=animations.es5.js.map
+
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(0))(74);
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(0))(75);
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(0))(79);
 
 /***/ })
 /******/ ]);

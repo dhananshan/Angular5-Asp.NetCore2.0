@@ -26,6 +26,8 @@ module.exports = (env) => {
                 '@angular/platform-browser',
                 '@angular/platform-browser-dynamic',
                 '@angular/router',
+                '@progress/kendo-angular-l10n',
+                '@progress/kendo-angular-buttons',
                 'bootstrap',
                 'bootstrap/dist/css/bootstrap.css',
                 'es6-shim',

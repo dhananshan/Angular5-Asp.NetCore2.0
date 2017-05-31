@@ -38,7 +38,9 @@
     "webpack": "2.5.1",
     "webpack-hot-middleware": "2.18.0",
     "webpack-merge": "4.1.0",
-    "zone.js": "0.8.10"
+    "zone.js": "0.8.10",
+    "@progress/kendo-angular-l10n": "1.0.0",
+    "@progress/kendo-angular-buttons": "1.0.0"
 
   },
   "devDependencies": {
@@ -71,3 +73,4 @@
   "repository": {},
   "version": "1.0.0"
 }
+
