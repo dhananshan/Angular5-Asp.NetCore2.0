@@ -20,4 +20,15 @@ ASP.NET CORE 1.1 & ANGULAR 4 Starter template with additional features
 
  - Unit testing with [Karma](https://karma-runner.github.io/1.0/index.html)/[Jasmine](https://jasmine.github.io/)
  - Docker support
+ 
+ ## Getting Started? 
+ 
+ - Make sure you have node 6.10.X or higher 
+ - Visual Studio 2017 with .net core 1.1
+ - Kendo UI requires NPM registry access to download @progress packages. So before run the project execute the following provide your demo username, password, and email as mentioned [here](http://www.telerik.com/kendo-angular-ui/components/installation/npm-registry/)
+ 
+ ```sh
+$ npm login --registry=https://registry.npm.telerik.com/ --scope=@progress
+
+```
 
