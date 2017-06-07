@@ -15,6 +15,7 @@ ASP.NET CORE 1.1 & ANGULAR 4 Starter template with additional features
   - [ ] [SignalR](https://www.asp.net/signalr)
   - [ ] [Material 2](https://material.angular.io/)
   - [x] [Typescript 2](https://www.typescriptlang.org/index.html)
+  - [ ] [JWT](https://jwt.io/)
   - [ ] Unit testing with [Karma](https://karma-runner.github.io/1.0/index.html)/[Jasmine](https://jasmine.github.io/)
   - [ ] Docker support
  
