@@ -7,10 +7,12 @@ import { NavComponent } from './navigation/nav.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Import the ButtonsModule
+// Import the kendo ButtonsModule
 import { KendoComponent } from './kendo/kendo.component';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 
+// Import the material ButtonsModule
+import { MdButtonModule, MdCheckboxModule } from '@angular/material';
 
 const appRoutes: Routes = [
     { path: 'kendo', component: KendoComponent }
@@ -21,6 +23,7 @@ const appRoutes: Routes = [
         FormsModule,
         BrowserAnimationsModule,
         ButtonsModule,
+        MdButtonModule, MdCheckboxModule,
         RouterModule.forRoot(appRoutes)],
 
     declarations: [AppComponent,
