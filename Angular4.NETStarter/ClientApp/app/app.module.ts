@@ -12,7 +12,11 @@ import { MaterialComponent } from './material/material.component';
 
 // Import the kendo ButtonsModule
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
-
+import { LabelModule } from '@progress/kendo-angular-label';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+ 
 // Import the material ButtonsModule
 import { MdButtonModule, MdCheckboxModule } from '@angular/material';
 
@@ -25,7 +29,7 @@ const appRoutes: Routes = [
     imports: [BrowserModule,
         FormsModule,
         BrowserAnimationsModule,
-        ButtonsModule,
+        ButtonsModule, LabelModule, DateInputsModule, DropDownsModule, InputsModule,
         MdButtonModule, MdCheckboxModule,
         RouterModule.forRoot(appRoutes)],
 

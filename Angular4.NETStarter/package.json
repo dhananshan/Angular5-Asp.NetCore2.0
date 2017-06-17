@@ -41,7 +41,13 @@
     "webpack-merge": "4.1.0",
     "zone.js": "0.8.10",
     "@progress/kendo-angular-l10n": "1.0.0",
-    "@progress/kendo-angular-buttons": "1.0.0"
+    "@progress/kendo-angular-buttons": "1.0.0",
+    "@progress/kendo-angular-label": "1.0.0",
+    "@progress/kendo-angular-dropdowns": "1.0.0",
+    "@progress/kendo-angular-inputs": "1.0.0",
+    "@progress/kendo-angular-intl": "1.0.0",
+    "@progress/kendo-angular-dateinputs": "1.0.0",
+    "@progress/kendo-theme-default": "^1.0.0"
   },
   "devDependencies": {
     "@types/chai": "3.5.2",
@@ -63,7 +69,8 @@
     "rimraf": "^2.5.4",
     "tslint": "^3.15.1",
     "typescript": "~2.0.10",
-    "html-webpack-plugin": "^2.16.1"
+    "html-webpack-plugin": "^2.16.1",
+    "copy-webpack-plugin": "^4.0.1"
   },
   "name": "ngasp.net",
   "scripts": {
