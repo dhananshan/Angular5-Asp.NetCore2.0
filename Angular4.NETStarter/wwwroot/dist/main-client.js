@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5212fd7e31174d106829"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d128e14d167ebe597bb6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -704,7 +704,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(43)(__webpack_require__.s = 43);
+/******/ 	return hotCreateRequire(44)(__webpack_require__.s = 44);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -935,11 +935,11 @@ module.exports = (__webpack_require__(0))(7);
 
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(30);
-__webpack_require__(42);
+__webpack_require__(43);
 __webpack_require__(18);
 __webpack_require__(17);
 var core_1 = __webpack_require__(1);
-var platform_browser_dynamic_1 = __webpack_require__(38);
+var platform_browser_dynamic_1 = __webpack_require__(39);
 var app_module_1 = __webpack_require__(13);
 if (true) {
     module['hot'].accept();
@@ -4489,15 +4489,17 @@ var forms_1 = __webpack_require__(37);
 var app_component_1 = __webpack_require__(12);
 var pagenotfound_component_1 = __webpack_require__(16);
 var nav_component_1 = __webpack_require__(15);
-var router_1 = __webpack_require__(39);
+var router_1 = __webpack_require__(40);
 var animations_1 = __webpack_require__(9);
-// Import the kendo ButtonsModule
 var kendo_component_1 = __webpack_require__(14);
-var kendo_angular_buttons_1 = __webpack_require__(40);
+var material_component_1 = __webpack_require__(45);
+// Import the kendo ButtonsModule
+var kendo_angular_buttons_1 = __webpack_require__(41);
 // Import the material ButtonsModule
-var material_1 = __webpack_require__(44);
+var material_1 = __webpack_require__(38);
 var appRoutes = [
-    { path: 'kendo', component: kendo_component_1.KendoComponent }
+    { path: 'kendo', component: kendo_component_1.KendoComponent },
+    { path: 'material', component: material_component_1.MaterialComponent }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -4514,6 +4516,7 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot(appRoutes)],
         declarations: [app_component_1.AppComponent,
             kendo_component_1.KendoComponent,
+            material_component_1.MaterialComponent,
             pagenotfound_component_1.PageNotFoundComponent,
             nav_component_1.NavComponent],
         bootstrap: [app_component_1.AppComponent]
@@ -7006,7 +7009,7 @@ if (typeof jQuery === 'undefined') {
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(41);
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(42);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
@@ -7345,13 +7348,13 @@ module.exports = "<nav class=\"navbar navbar-inverse navbar-fixed-top\">\r\n    
 /* 24 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>{{title}}</h1>\r\n\r\n<button kendoButton (click)=\"onButtonClick()\" [primary]=\"true\">My Kendo UI Button</button>\r\n\r\n\r\n<button md-raised-button md-tooltip=\"This is a tooltip!\">Test</button>";
+module.exports = "<h1>{{title}}</h1>\r\n\r\n<button kendoButton (click)=\"onButtonClick()\" [primary]=\"true\">My Kendo UI Button</button>\r\n";
 
 /***/ }),
 /* 25 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navbar-header\">\r\n    <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n    </button>\r\n    <a class=\"navbar-brand\" href=\"#\">Angular4-Asp.NetCore</a>\r\n</div>\r\n<div id=\"navbar\" class=\"navbar-collapse collapse\" aria-expanded=\"false\" style=\"height: 1px;\">\r\n    <ul class=\"nav navbar-nav\">\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">Kendo</a></li>\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">ng2-material</a></li>\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">ASP.NET Core SignalR</a></li>\r\n    </ul>\r\n</div><!--/.nav-collapse -->";
+module.exports = "<div class=\"navbar-header\">\r\n    <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n    </button>\r\n    <a class=\"navbar-brand\" href=\"#\">Angular4-Asp.NetCore</a>\r\n</div>\r\n<div id=\"navbar\" class=\"navbar-collapse collapse\" aria-expanded=\"false\" style=\"height: 1px;\">\r\n    <ul class=\"nav navbar-nav\">\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">Kendo</a></li>\r\n        <li><a routerLink=\"/material\" routerLinkActive=\"active\">ng2-material</a></li>\r\n        <li><a routerLink=\"/kendo\" routerLinkActive=\"active\">ASP.NET Core SignalR</a></li>\r\n    </ul>\r\n</div><!--/.nav-collapse -->";
 
 /***/ }),
 /* 26 */
@@ -8970,34 +8973,40 @@ module.exports = (__webpack_require__(0))(43);
 /* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(86);
+module.exports = (__webpack_require__(0))(85);
 
 /***/ }),
 /* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(87);
+module.exports = (__webpack_require__(0))(86);
 
 /***/ }),
 /* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(88);
+module.exports = (__webpack_require__(0))(87);
 
 /***/ }),
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(94);
+module.exports = (__webpack_require__(0))(88);
 
 /***/ }),
 /* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(95);
+module.exports = (__webpack_require__(0))(94);
 
 /***/ }),
 /* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(0))(95);
+
+/***/ }),
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(7);
@@ -9006,10 +9015,41 @@ module.exports = __webpack_require__(5);
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(0))(85);
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(1);
+var MaterialComponent = (function () {
+    function MaterialComponent() {
+        this.title = 'Hello World!';
+    }
+    MaterialComponent.prototype.onButtonClick = function () {
+        this.title = 'Hello from Material UI!';
+    };
+    return MaterialComponent;
+}());
+MaterialComponent = __decorate([
+    core_1.Component({
+        template: __webpack_require__(46)
+    })
+], MaterialComponent);
+exports.MaterialComponent = MaterialComponent;
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>{{title}}</h1>\r\n\r\n<button md-raised-button md-tooltip=\"This is a tooltip!\"  (click)=\"onButtonClick()\" >My Material UI Button</button>";
 
 /***/ })
 /******/ ]);

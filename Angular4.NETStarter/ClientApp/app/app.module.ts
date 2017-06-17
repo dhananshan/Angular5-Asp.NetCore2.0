@@ -7,15 +7,18 @@ import { NavComponent } from './navigation/nav.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Import the kendo ButtonsModule
 import { KendoComponent } from './kendo/kendo.component';
+import { MaterialComponent } from './material/material.component';
+
+// Import the kendo ButtonsModule
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 
 // Import the material ButtonsModule
 import { MdButtonModule, MdCheckboxModule } from '@angular/material';
 
 const appRoutes: Routes = [
-    { path: 'kendo', component: KendoComponent }
+    { path: 'kendo', component: KendoComponent },
+    { path: 'material', component: MaterialComponent }
 ];
 
 @NgModule({
@@ -28,6 +31,7 @@ const appRoutes: Routes = [
 
     declarations: [AppComponent,
         KendoComponent,
+        MaterialComponent,
         PageNotFoundComponent,
         NavComponent],
     bootstrap: [AppComponent]
