@@ -1,5 +1,5 @@
-﻿import { Component, ViewEncapsulation  } from '@angular/core';
-
+﻿import { Component, ViewEncapsulation } from '@angular/core';
+import { UserInfoDto } from '../model/UserInfoDto'
 
 
 @Component({
@@ -21,4 +21,13 @@ export class KendoComponent {
     public max: number = 99;
     public smallStep: number = 1;
 
+    public userIndo: UserInfoDto;
+
+    constructor() {
+        this.userIndo = new UserInfoDto();
+    }
+
+    save(){
+
+    }
 } 

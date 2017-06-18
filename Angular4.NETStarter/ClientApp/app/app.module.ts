@@ -7,6 +7,9 @@ import { NavComponent } from './navigation/nav.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { RequiredValidator } from './validator/CustomValidation/required.validator'
+import { ValidationComponent } from './validator/validation.component'
+
 import { KendoComponent } from './kendo/kendo.component';
 import { MaterialComponent } from './material/material.component';
 
@@ -37,7 +40,9 @@ const appRoutes: Routes = [
         KendoComponent,
         MaterialComponent,
         PageNotFoundComponent,
-        NavComponent],
+        NavComponent,
+        ValidationComponent,
+        RequiredValidator],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
