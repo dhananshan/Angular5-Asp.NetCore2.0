@@ -11,10 +11,11 @@ import { UserInfoDto } from '../model/UserInfoDto'
     templateUrl: 'kendo.component.html'
 })
 
-
+// Demo Kendo + Template driven form
 
 export class KendoComponent {
-    title = 'Kendo Demo!';
+    title = 'Kendo Template Driven Form Demo!';
+
 
     public genderItems: Array<string> = ["Male", "Female"];
     public min: number = 18;
