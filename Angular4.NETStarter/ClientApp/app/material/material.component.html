@@ -1,3 +1,61 @@
 ﻿<h1>{{title}}</h1>
 
-<button md-raised-button md-tooltip="This is a tooltip!"  (click)="onButtonClick()" >My Material UI Button</button>
+
+<form class="form-horizontal">
+
+    <div class="form-group">
+        <div class="col-sm-12">
+            <md-input-container>
+                <input mdInput placeholder="Name">
+            </md-input-container>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-12">
+            <md-input-container>
+                <input mdInput [mdDatepicker]="picker" placeholder="Date of Birth">
+                <button mdSuffix [mdDatepickerToggle]="picker"></button>
+            </md-input-container>
+            <md-datepicker #picker></md-datepicker>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-12">
+            <md-select placeholder="Gender">
+                <md-option *ngFor="let item of genderItems" [value]="item.value">
+                    {{ item.viewValue }}
+                </md-option>
+            </md-select>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-12">
+            <md-slider min="18" max="99" step="1"></md-slider>
+        </div>
+    </div>
+
+
+    <button md-raised-button class="pull-right" type="submit">Submit</button>
+
+</form>
+
+
+
+
+
+
+
+<!--<section>
+
+    <ul>
+        <li *ngFor="let user of userList">
+          
+        </li>
+    </ul>
+
+</section>-->

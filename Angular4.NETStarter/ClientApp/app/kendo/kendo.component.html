@@ -1,7 +1,7 @@
 ﻿<h1>{{title}}</h1>
 
 
-<form #userform="ngForm" class="form-horizontal" (ngSubmit)="save()">
+<form #userform="ngForm" class="form-horizontal" (ngSubmit)="save(userform.value)">
 
     <div class="form-group">
         <label class="control-label col-sm-2" [for]="name">Name:</label>
@@ -46,3 +46,14 @@
     <button kendoButton  [disabled]="!userform.valid" [primary]="true" class="pull-right" type="submit">Submit</button>
 
 </form>
+
+
+<section>
+
+    <ul>
+        <li *ngFor="let user of userList">
+            {{ user.Name }}
+        </li>
+    </ul>
+
+</section>

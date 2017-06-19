@@ -21,7 +21,7 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { InputsModule } from '@progress/kendo-angular-inputs';
  
 // Import the material ButtonsModule
-import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { MaterialModule, MdNativeDateModule  } from '@angular/material';
 
 const appRoutes: Routes = [
     { path: 'kendo', component: KendoComponent },
@@ -33,7 +33,7 @@ const appRoutes: Routes = [
         FormsModule,
         BrowserAnimationsModule,
         ButtonsModule, LabelModule, DateInputsModule, DropDownsModule, InputsModule,
-        MdButtonModule, MdCheckboxModule,
+        MaterialModule, MdNativeDateModule,
         RouterModule.forRoot(appRoutes)],
 
     declarations: [AppComponent,

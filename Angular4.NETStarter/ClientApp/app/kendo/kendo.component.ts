@@ -21,14 +21,19 @@ export class KendoComponent {
     public min: number = 18;
     public max: number = 99;
     public smallStep: number = 1;
+    public userList: Array<UserInfoDto>;
 
     public userIndo: UserInfoDto;
 
     constructor() {
         this.userIndo = new UserInfoDto();
+        this.userList = new Array<UserInfoDto>();
     }
 
-    save(){
 
+    // Can use this way as well: save(value: any)
+    save(value: any) {
+  
+        this.userList.push(value);
     }
 } 
