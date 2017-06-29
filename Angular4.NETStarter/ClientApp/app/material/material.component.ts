@@ -1,7 +1,7 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
-
-
-
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { RequiredValidator } from '../validator/CustomValidation/required.validator'
+import { UserInfoDto } from '../model/UserInfoDto'
 @Component({
    
      styleUrls: [
@@ -15,14 +15,30 @@
 
 
 export class MaterialComponent {
-    title = 'Hello World!';
+    title = 'Kendo Model Driven/ Reactive Form Demo!';
+    userDetailForm: FormGroup;
+    public userList: Array<UserInfoDto>;
     public genderItems: [
         { value: 'male', viewValue: 'Male' },
         { value: 'female', viewValue: 'Female' }
     ];
 
 
-    onButtonClick() {
-        this.title = 'Hello from Material UI!';
+    constructor(private fb: FormBuilder) {
+        this.createForm();
+        this.userList = new Array<UserInfoDto>();
+    }
+
+    createForm() {
+        this.userDetailForm = this.fb.group({
+            Name: ['', Validators.required],
+            DoB: ['', Validators.required],
+            Gender: [''],
+            Age: ['']
+        });
+    }
+
+    save() {
+        this.userList.push(this.userDetailForm.value);
     }
 } 

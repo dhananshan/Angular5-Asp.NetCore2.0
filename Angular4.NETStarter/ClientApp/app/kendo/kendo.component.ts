@@ -33,7 +33,6 @@ export class KendoComponent {
 
     // Can use this way as well: save(value: any)
     save(value: any) {
-  
         this.userList.push(value);
     }
 } 

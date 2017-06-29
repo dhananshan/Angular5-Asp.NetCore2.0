@@ -18,7 +18,7 @@ export class RequiredValidator implements Validator {
 
 
     validate(c: AbstractControl): { [key: string]: any } {
-
+        
         let value = c.value;
         try {
 
