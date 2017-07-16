@@ -13,6 +13,9 @@ import { ValidationComponent } from './validator/validation.component'
 import { KendoComponent } from './kendo/kendo.component';
 import { MaterialComponent } from './material/material.component';
 
+
+import { DrawComponent } from './draw/draw.component';
+
 // Import the kendo ButtonsModule
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { LabelModule } from '@progress/kendo-angular-label';
@@ -25,7 +28,8 @@ import { MaterialModule, MdNativeDateModule  } from '@angular/material';
 
 const appRoutes: Routes = [
     { path: 'kendo', component: KendoComponent },
-    { path: 'material', component: MaterialComponent }
+    { path: 'material', component: MaterialComponent },
+    { path: 'draw', component: DrawComponent }
 ];
 
 @NgModule({
@@ -39,6 +43,7 @@ const appRoutes: Routes = [
     declarations: [AppComponent,
         KendoComponent,
         MaterialComponent,
+        DrawComponent,
         PageNotFoundComponent,
         NavComponent,
         ValidationComponent,
