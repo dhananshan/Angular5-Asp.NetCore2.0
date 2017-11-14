@@ -1,0 +1,22 @@
+﻿.login-box {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    z-index: 15;
+    top: 40%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+    background: white;
+}
+
+.form-container {
+    padding: 10%;
+    text-align: center;
+}
+
+.login-button {
+    width: 100%;
+}
+.login-info-label {
+    color: grey;
+}

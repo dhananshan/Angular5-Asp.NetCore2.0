@@ -1,0 +1,15 @@
+<div class="login-box">
+    <div class="login-logo"></div>
+    <br/>
+    <br/>
+    <form #loginform="ngForm" class="form-container" (ngSubmit)="login()">
+        <label class="login-info-label">Enter your details to login</label>
+        <br />
+        <input  name="username" [(ngModel)]="model.username" class="form-control" type="text" placeholder="Username" required ngModel maxlength="50">
+        <br />
+        <input name="password" validateRequired [(ngModel)]="model.password" #password="ngModel" class="form-control" type="password" placeholder="Password" required ngModel maxlength="100">
+        <br />
+        <button type="submit" [disabled]="!loginform.form.valid || isDisabled" class="btn btn-danger login-button" >Login</button>
+    </form>
+    <mat-progress-bar *ngIf="isDisabled" mode="indeterminate" color="warn"></mat-progress-bar>
+</div>
